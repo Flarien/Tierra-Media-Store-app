@@ -1,4 +1,4 @@
-# Proyecto de Briglia App
+# Proyecto de Flavia Soledad Briglia
 
 Bienvenido al repositorio de Briglia App, una aplicación desarrollada con React Native, como proyecto para CODERHOUSE, Comisión 61300.
 
