@@ -4,7 +4,7 @@ Bienvenido al repositorio de Briglia App, una aplicación desarrollada con React
 
 ## Wireframe
 
-A continuación, se muestra el wireframe de nuestra aplicación:
+A continuación, se muestra el wireframe de mi aplicación:
 
 ![Wireframe de Briglia App](https://res.cloudinary.com/dciovdqaf/image/upload/v1706041020/wireframe_app_ki7lmb.png)
 
@@ -17,3 +17,18 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
    ```bash
    git clone https://github.com/tu-usuario/briglia-app.git
+   
+2. Navega al directorio del proyecto:
+
+   ```bash
+   cd briglia-app
+
+3. Instala las dependencias:
+
+   ```bash
+   npm install
+   
+4. Ejecuta la aplicación:
+
+   ```bash
+   npm start
