@@ -12,7 +12,6 @@ import {
 import Constants from "expo-constants";
 import RemoveModal from "./src/components/RemoveModal";
 import { colors } from "./src/global/colors.js";
-import { del } from "./assets/delete.svg";
 
 const DATA = [
   {
@@ -33,10 +32,9 @@ export default function App() {
   const [inputValue, setInputValue] = useState("");
   const [cartItems, setCartItems] = useState([]); //Modifica el carrito
   const [modalVisible, setModalVisible] = useState(false); //Cambia entre mostrar o no el remove modal
-  const [itemSelected, setItemSelected] = useState(null); //
+  const [itemSelected, setItemSelected] = useState(null); 
 
   const handleInputChange = (value) => setInputValue(value); //Cambia el valor ingresado al TextInput: onChangeText
-
   const handleModal = (id) => {
     setModalVisible(true);
     setItemSelected(id);
