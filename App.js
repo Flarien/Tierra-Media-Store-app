@@ -13,21 +13,6 @@ import Constants from "expo-constants";
 import RemoveModal from "./src/components/RemoveModal";
 import { colors } from "./src/global/colors.js";
 
-const DATA = [
-  {
-    name: "Producto 1",
-    id: 1,
-  },
-  {
-    name: "Producto 2",
-    id: 2,
-  },
-  {
-    name: "Producto 3",
-    id: 3,
-  },
-];
-
 export default function App() {
   const [inputValue, setInputValue] = useState("");
   const [cartItems, setCartItems] = useState([]); //Modifica el carrito
