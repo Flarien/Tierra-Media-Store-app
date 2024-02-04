@@ -1,12 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, View } from 'react-native'
 import Header from '../components/Header';
+import Categories from '../components/Categories';
 
 const Home = () => {
   return (
     <View>
-      <Header />
-      <Text>Lista de Categorías</Text>
+      <Header title={"Categorías"} />
+      <Categories />
     </View>
   );
 }
