@@ -53,8 +53,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar />
-      {/* Se llama al modal para eliminar el producto y pasándole por props toda la data que necesita */}
-
+      {/* Modal para eliminar el producto, con props con la data que necesita */}
       <RemoveModal
         modalVisible={modalVisible}
         cartItems={cartItems}
@@ -63,7 +62,7 @@ export default function App() {
         itemSelected={itemSelected}
       />
 
-      {/* Título más logo del carrito */}
+      {/* Título y imagen del carrito */}
       <View style={styles.containerRow}>
         <Image
           style={styles.image}
@@ -89,12 +88,12 @@ export default function App() {
 
       {/* Lista optimizada */}
       <View style={styles.lista}>
-        <Text style={styles.titulo}>Lista de Productos</Text>
+        <Text style={styles.subTitulo}>Lista de Productos</Text>
         <FlatList
           data={cartItems}
           renderItem={({ item }) => (
             <View style={styles.containerRow}>
-              <Text style={styles.parrafo}>{item.name}</Text>
+              <Text style={styles.itemList}>{item.name}</Text>
 
               <Pressable onPress={() => handleModal(item.id)}>
                 <Image
@@ -133,7 +132,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    width: 250,
+    width: 300,
     margin: 20,
     padding: 10,
     borderColor: colors.back_green,
@@ -161,11 +160,30 @@ const styles = StyleSheet.create({
     color: colors.primary,
   },
 
-  parrafo: {
+  subTitulo: {
+    fontSize: 26,
+    fontWeight: "bold",
+    margin: 20,
+    textAlign: "center",
+    color: colors.secondary,
+  },
+
+  itemList: {
     fontSize: 18,
     fontWeight: "400",
     margin: 15,
     textAlign: "center",
+    backgroundColor: "#ebebeb",
+    padding: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+    width: 250,
   },
 
   lista: {
