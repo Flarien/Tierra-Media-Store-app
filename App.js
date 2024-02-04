@@ -9,34 +9,32 @@ import {
   Pressable,
   FlatList,
 } from "react-native";
-import logo from "./assets/favicon.png";
 import Constants from "expo-constants";
 import RemoveModal from "./src/components/RemoveModal";
+import { colors } from "./src/global/colors.js";
+import { del } from "./assets/delete.svg";
 
 const DATA = [
   {
-    name: "Remeras",
+    name: "Producto 1",
     id: 1,
   },
   {
-    name: "Pantalón",
+    name: "Producto 2",
     id: 2,
   },
   {
-    name: "Gorra",
+    name: "Producto 3",
     id: 3,
   },
 ];
 
 export default function App() {
-  // useState y useEffect hooks para controlar el estado de la aplicación y el ciclo de vida de un componente
-  const [counter, setCounter] = useState(0);
   const [inputValue, setInputValue] = useState("");
-  const [cartItems, setCartItems] = useState([]); //Modal: inicia siempre en ARRAY | Este estado modifica el carrito
-  const [modalVisible, setModalVisible] = useState(false); //Su función es cambiar entre muotrar o no el modal
-  const [itemSelected, setItemSelected] = useState(null);
+  const [cartItems, setCartItems] = useState([]); //Modifica el carrito
+  const [modalVisible, setModalVisible] = useState(false); //Cambia entre mostrar o no el remove modal
+  const [itemSelected, setItemSelected] = useState(null); //
 
-  const handleAddCounter = () => setCounter(counter + 1);
   const handleInputChange = (value) => setInputValue(value); //Cambia el valor ingresado al TextInput: onChangeText
 
   const handleModal = (id) => {
@@ -47,7 +45,7 @@ export default function App() {
   const addItem = () => {
     const newItem = {
       name: inputValue,
-      id: new Date().getTime(), //Genera un id casi imposible de que se repita, gracias al metodo Date, que incluye milisegundos
+      id: new Date().getTime(),
     };
     setCartItems([...cartItems, newItem]);
   };
@@ -55,7 +53,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar />
-      {/* Llamamos al modal para eliminar el producto y le pasamos por props toda la data que necesita */}
+      {/* Se llama al modal para eliminar el producto y pasándole por props toda la data que necesita */}
+
       <RemoveModal
         modalVisible={modalVisible}
         cartItems={cartItems}
@@ -63,18 +62,19 @@ export default function App() {
         setModalVisible={setModalVisible}
         itemSelected={itemSelected}
       />
+
+      {/* Título más logo del carrito */}
       <View style={styles.containerRow}>
-        <Image style={styles.image} source={logo} />
+        <Image
+          style={styles.image}
+          source={{
+            uri: "https://purepng.com/public/uploads/large/purepng.com-shopping-cartshoppingcarttrolleycarriagebuggysupermarkets-1421526532320cblq3.png",
+          }}
+        />
         <Text style={styles.titulo}>CARRITO</Text>
       </View>
 
-      <Image
-        style={styles.image}
-        source={{
-          uri: "https://purepng.com/public/uploads/large/purepng.com-shopping-cartshoppingcarttrolleycarriagebuggysupermarkets-1421526532320cblq3.png",
-        }}
-      />
-
+      {/* Input para agregar productos y botón de agregar */}
       <View style={styles.containerRow}>
         <TextInput
           onChangeText={handleInputChange}
@@ -83,27 +83,26 @@ export default function App() {
           placeholder="Ingrese un producto"
         />
         <Pressable onPress={addItem}>
-          <Text style={{ fontSize: 40 }}>+</Text>
+          <Text style={styles.button}>+</Text>
         </Pressable>
       </View>
 
-      {/* <View style={styles.parrafo}> 
-        {DATA.map((item) => (
-          <View key={item.id}>
-            <Text style={styles.parrafo}>{item.name}</Text>
-          </View>
-        ))}
-        ------->Esto no es scrolleable
-      </View> */}
-
+      {/* Lista optimizada */}
       <View style={styles.lista}>
+        <Text style={styles.titulo}>Lista de Productos</Text>
         <FlatList
           data={cartItems}
           renderItem={({ item }) => (
             <View style={styles.containerRow}>
               <Text style={styles.parrafo}>{item.name}</Text>
+
               <Pressable onPress={() => handleModal(item.id)}>
-                <Text style={{ fontSize: 20 }}>🚮</Text>
+                <Image
+                  style={styles.delete}
+                  source={{
+                    uri: "https://img.icons8.com/pulsar-line/48/delete-forever.png",
+                  }}
+                />
               </Pressable>
             </View>
           )}
@@ -117,11 +116,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#EBE8E5",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    paddingHorizontal: 20,
-    paddingTop: Constants.statusBarHeight, //evita que se superponga el contenido de la App con la barra de estado del dispositivo
+    width: "100%",
+    backgroundColor: colors.back_beige,
+    paddingTop: Constants.statusBarHeight,
   },
 
   containerRow: {
@@ -131,18 +128,28 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 50,
-    height: 50,
-    margin: 20,
+    width: 45,
+    height: 45,
   },
 
   input: {
     width: 250,
     margin: 20,
     padding: 10,
-    borderColor: "#3498db",
+    borderColor: colors.back_green,
     backgroundColor: "#ebebeb",
     borderWidth: 2,
+  },
+
+  button: {
+    backgroundColor: colors.back_green,
+    paddingVertical: 8,
+    paddingHorizontal: 15,
+    borderRadius: 10,
+    alignItems: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#ebebeb",
   },
 
   titulo: {
@@ -151,6 +158,7 @@ const styles = StyleSheet.create({
     margin: 20,
     padding: 20,
     textAlign: "center",
+    color: colors.primary,
   },
 
   parrafo: {
@@ -161,20 +169,14 @@ const styles = StyleSheet.create({
   },
 
   lista: {
-    flex: 1, //importante para visualizar el scrolleable
+    flex: 1,
     fontSize: 18,
     fontWeight: "400",
-    margin: 15,
     textAlign: "center",
   },
 
-  button: {
-    backgroundColor: "#2ecc71",
-    padding: 15,
-    borderRadius: 10,
-    marginBottom: 15,
-    alignItems: "center",
-    fontSize: 20,
-    fontWeight: "bold",
+  delete: {
+    width: 35,
+    height: 35,
   },
 });
