@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 5,
     fontSize: 18,
-    fontWeight: "600",
     marginHorizontal: 15,
     textAlign: "center",
+    fontFamily: "Cinzel",
   },
 });

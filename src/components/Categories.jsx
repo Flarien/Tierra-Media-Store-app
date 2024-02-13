@@ -24,10 +24,10 @@ export default Categories;
 
 const styles = StyleSheet.create({
   titleCategories: {
-    fontSize: 24,
+    fontSize: 30,
     color: "brown",
     margin: 20,
-    fontWeight: "bold",
+    fontFamily: "Cinzel",
     textAlign: "center",
   },
 });

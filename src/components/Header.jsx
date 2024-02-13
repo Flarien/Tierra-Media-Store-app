@@ -19,5 +19,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     padding: 10,
+    fontFamily: "Cinzel",
   },
-});
+}); 

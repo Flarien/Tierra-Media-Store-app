@@ -22,5 +22,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 1,
     margin: 8,
+
+    fontFamily: "Cinzel",
   },
 });
