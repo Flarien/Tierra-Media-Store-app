@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useFonts } from "expo-font";
 import { StyleSheet, View } from "react-native";
 import { colors } from "./src/global/colors.js";
 import Constants from "expo-constants";
@@ -7,6 +8,12 @@ import ItemListCategories from "./src/screens/ItemListCategories.jsx";
 
 export default function App() {
   const [categorySelected, setCategorySelected] = useState("");
+
+  const [fontsLoaded] = useFonts();
+
+  if (!fontsLoaded) {
+    return null
+  }
 
   return (
     <View style={styles.container}>
