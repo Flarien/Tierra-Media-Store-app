@@ -19,7 +19,7 @@ const ItemListCategories = ({category}) => {
       setProducts(filteredProducts);
     }
 
-  },[]) // Se va a ejecutar una sola vez (al final) a menos que cambie algo de lo que yo haya puesto en el []
+  },[ category, keyword ]) // Se va a ejecutar una sola vez (al final) a menos que cambie algo de lo que yo haya puesto en el []
 
 
   return (
