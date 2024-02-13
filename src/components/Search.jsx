@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Pressable,
   StyleSheet,
@@ -8,14 +7,13 @@ import {
 import { colors } from "../global/colors";
 import {AntDesign} from "@expo/vector-icons";
 
-const Search = () => {
-  const [input, setInput] = useState("");
+const Search = ({keyword, onSearch}) => {
 
   return (
     <View style={styles.containerRow}>
       <TextInput
-        onChangeText={setInput}
-        value={input}
+        onChangeText={onSearch}
+        value={keyword}
         style={styles.input}
         placeholder="Buscar producto"
       />
