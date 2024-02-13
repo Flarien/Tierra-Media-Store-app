@@ -1,13 +1,11 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text } from "react-native";
 import Card from "./Card";
 
 const ProductItem = ({ product }) => {
   return (
     <Card>
       <Text style={styles.list}>{product.title}</Text>
-      <View>
-        <Image style={styles.image} uri={product.images[0]} />
-      </View>
+      <Image style={styles.image} source={{ uri: product.images[0] }} />
     </Card>
   );
 };
@@ -19,13 +17,14 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 5,
     fontSize: 18,
-    fontWeight: "600",
+    fontFamily: "Cinzel",
     marginHorizontal: 15,
     textAlign: "center",
   },
 
   image: {
-    width: 40,
-    height:40,
+    width: 100,
+    height: 100,
+    margin: 5,
   },
 });

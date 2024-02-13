@@ -12,6 +12,9 @@ export default Card
 
 const styles = StyleSheet.create({
   cardContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "white",
     shadowColor: "black",
     shadowOffset: {
@@ -22,7 +25,5 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 1,
     margin: 8,
-
-    fontFamily: "Cinzel",
   },
 });

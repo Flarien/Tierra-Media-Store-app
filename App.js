@@ -19,7 +19,10 @@ export default function App() {
   return (
     <View style={styles.container}>
       {categorySelected ? (
-        <ItemListCategories />
+        <ItemListCategories
+          setCategorySelected={setCategorySelected}
+          category={categorySelected}
+        />
       ) : (
         <Home setCategorySelected={setCategorySelected} />
       )}
