@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { colors } from "./src/global/colors.js";
 import Constants from "expo-constants";
@@ -5,10 +6,15 @@ import Home from "./src/screens/Home.jsx";
 import ItemListCategories from "./src/screens/ItemListCategories.jsx";
 
 export default function App() {
+  const [categorySelected, setCategorySelected] = useState("");
+
   return (
     <View style={styles.container}>
-      {/* <Home /> */}
-      <ItemListCategories category="tops" />
+      {categorySelected ? (
+        <ItemListCategories />
+      ) : (
+        <Home setCategorySelected={setCategorySelected} />
+      )}
     </View>
   );
 }

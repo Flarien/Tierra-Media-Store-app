@@ -1,15 +1,17 @@
-import { StyleSheet, Text } from 'react-native'
-import Card from './Card';
+import { Pressable, StyleSheet, Text } from "react-native";
+import Card from "./Card";
 
-const CategoryItem = ({ category }) => {
+const CategoryItem = ({ category, setCategorySelected }) => {
   return (
     <Card>
-      <Text style={styles.list}>{category}</Text>
+      <Pressable onPress={() => setCategorySelected(category)}>
+        <Text style={styles.list}>{category}</Text>
+      </Pressable>
     </Card>
   );
 };
 
-export default CategoryItem
+export default CategoryItem;
 
 const styles = StyleSheet.create({
   list: {
