@@ -17,9 +17,8 @@ const styles = StyleSheet.create({
     margin: 10,
     padding: 5,
     fontSize: 18,
-    fontFamily: "Cinzel",
-    marginHorizontal: 15,
     textAlign: "center",
+    fontFamily: "Cinzel",
   },
 
   image: {

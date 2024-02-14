@@ -28,7 +28,7 @@ const ItemListCategories = ({ category, setCategorySelected }) => {
 
   return (
     <View>
-      <Text style={styles.titleSection}>ItemListCategories</Text>
+      <Text style={styles.titleSection}>{category}</Text>
       <Search onSearch={setKeyword} keyword={keyword} />
       <FlatList
         data={products}

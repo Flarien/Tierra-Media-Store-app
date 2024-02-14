@@ -4,7 +4,7 @@ import CategoryItem from "./CategoryItem";
 
 const Categories = ({ setCategorySelected }) => {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <Text style={styles.titleCategories}>Lista de Categorías</Text>
       <FlatList
         data={categories}
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   titleCategories: {
     fontSize: 30,
     color: "brown",
-    margin: 20,
+    marginTop: 20,
     fontFamily: "Cinzel",
     textAlign: "center",
   },

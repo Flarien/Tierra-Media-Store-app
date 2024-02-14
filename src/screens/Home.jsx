@@ -4,8 +4,8 @@ import Categories from '../components/Categories';
 
 const Home = ({ setCategorySelected }) => {
   return (
-    <View>
-      <Header title={"Categorías"} />
+    <View style={{ flex: 1 }}>
+      <Header title={"Tierra Media Store"} />
       <Categories setCategorySelected={setCategorySelected} />
     </View>
   );
@@ -13,4 +13,4 @@ const Home = ({ setCategorySelected }) => {
 
 export default Home
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

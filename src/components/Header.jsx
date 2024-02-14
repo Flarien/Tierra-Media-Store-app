@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     backgroundColor: colors.secondary,
     color: "white",
-    fontWeight: "bold",
     textAlign: "center",
     padding: 10,
     fontFamily: "Cinzel",
