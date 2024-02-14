@@ -1,11 +1,10 @@
-import { Image, StyleSheet, Text } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import Card from "./Card";
 
 const ProductItem = ({ product }) => {
   return (
     <Card>
       <Text style={styles.list}>{product.title}</Text>
-      <Image style={styles.image} source={{ uri: product.images[0] }} />
     </Card>
   );
 };
@@ -19,11 +18,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: "center",
     fontFamily: "Cinzel",
-  },
-
-  image: {
-    width: 100,
-    height: 100,
-    margin: 5,
   },
 });
