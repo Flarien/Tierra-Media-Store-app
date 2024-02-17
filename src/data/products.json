@@ -7,7 +7,7 @@
     "stock": 15,
     "category": "Armas Cuerpo a Cuerpo",
     "thumbnail": "enlace_thumbnail_1",
-    "images": ["enlace_imagen_1", "enlace_imagen_2"]
+    "images": "../assets/img/armas_cuerpo_a_cuerpo/espada_elfica.jpeg"
   },
   {
     "id": 2,
@@ -17,27 +17,27 @@
     "stock": 12,
     "category": "Armas Cuerpo a Cuerpo",
     "thumbnail": "enlace_thumbnail_2",
-    "images": ["enlace_imagen_3", "enlace_imagen_4"]
+    "images": "../assets/img/armas_cuerpo_a_cuerpo/hacha_enano.jpeg"
   },
   {
     "id": 3,
-    "title": "Lanza del Guardián",
-    "description": "Una lanza imbuida con la esencia protectora de los valientes guardianes de las fronteras. Perfecta para la defensa.",
+    "title": "Lanza del Batalla",
+    "description": "Una lanza diseñada para perforar las líneas enemigas y mantener a raya a los adversarios en el campo de batalla.",
     "price": 180,
     "stock": 18,
     "category": "Armas Cuerpo a Cuerpo",
     "thumbnail": "enlace_thumbnail_3",
-    "images": ["enlace_imagen_5", "enlace_imagen_6"]
+    "images": "../assets/img/armas_cuerpo_a_cuerpo/lanza.jpeg"
   },
   {
     "id": 4,
-    "title": "Maza del Poder Ancestral",
-    "description": "Una maza que canaliza el poder de los antiguos. Creada con secretos conocimientos transmitidos a lo largo de las eras.",
+    "title": "Maza Pesada",
+    "description": "Una maza contundente, perfecta para aplastar armaduras y romper defensas. Forjada con materiales resistentes.",
     "price": 300,
     "stock": 10,
     "category": "Armas Cuerpo a Cuerpo",
     "thumbnail": "enlace_thumbnail_4",
-    "images": ["enlace_imagen_7", "enlace_imagen_8"]
+    "images": "../assets/img/armas_cuerpo_a_cuerpo/maza.jpeg"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "stock": 14,
     "category": "Armas a Distancia",
     "thumbnail": "enlace_thumbnail_5",
-    "images": ["enlace_imagen_13", "enlace_imagen_14"]
+    "images": "../assets/img/armas_a_distancia/arco.jpeg"
   },
   {
     "id": 6,
@@ -57,347 +57,186 @@
     "stock": 12,
     "category": "Armas a Distancia",
     "thumbnail": "enlace_thumbnail_6",
-    "images": ["enlace_imagen_9", "enlace_imagen_10"]
+    "images": "../assets/img/armas_a_distancia/ballesta.jpeg"
   },
   {
     "id": 7,
     "title": "Carcaj de cuero",
-    "description": "Fabricado con cuero resistente y decorado con intrincados grabados. Las flechas que salen de este carcaj no fallarán su objetivo. ",
+    "description": "Fabricado con cuero resistente y decorado con intrincados grabados. Las flechas que salen de este carcaj no fallarán su objetivo.",
     "price": 200,
     "stock": 25,
     "category": "Armas a Distancia",
     "thumbnail": "enlace_thumbnail_7",
-    "images": ["enlace_imagen_15", "enlace_imagen_16"]
+    "images": "../assets/img/armas_a_distancia/carcaj.jpeg"
   },
   {
     "id": 8,
     "title": "Flechas del Oeste",
-    "description": "Cada flecha está finamente afinada para garantizar una trayectoria precisa y un impacto certero.",
+    "description": "Cada flecha está finamente afinada para garantizar una trayectoria precisa y un impacto certero. Ideales para arqueros exigentes.",
     "price": 240,
     "stock": 20,
     "category": "Armas a Distancia",
     "thumbnail": "enlace_thumbnail_8",
-    "images": ["enlace_imagen_19", "enlace_imagen_20"]
+    "images": "../assets/img/armas_a_distancia/flechas.jpeg"
   },
   {
     "id": 9,
-    "title": "Armadura de Placas del Dragón",
-    "description": "Una imponente armadura de placas, forjada con escamas de dragón. Proporciona una defensa incomparable.",
+    "title": "Armadura Liviana Élfica",
+    "description": "Una armadura ligera pero resistente, con grabados elegantes que reflejan la destreza artística de los elfos.",
     "price": 500,
     "stock": 8,
-    "category": "Armaduras",
+    "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_9",
-    "images": ["enlace_imagen_21", "enlace_imagen_22"]
+    "images": "../assets/img/armaduras_y_vestimenta/armadura_elfo.jpeg"
   },
   {
     "id": 10,
-    "title": "Capa de las Sombras",
-    "description": "Una capa élfica que otorga a su portador el don de desvanecerse con el entorno. Hecha con hilos de la tela de Lórien.",
+    "title": "Armadura Enana",
+    "description": "Una armadura robusta y duradera, forjada en las fraguas profundas de las Montañas Azules por los hábiles herreros enanos.",
     "price": 380,
     "stock": 10,
-    "category": "Armaduras",
+    "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_10",
-    "images": ["enlace_imagen_23", "enlace_imagen_24"]
+    "images": "../assets/img/armaduras_y_vestimenta/armadura_enana.jpeg"
   },
   {
     "id": 11,
-    "title": "Yelmo Rúnico Enano",
-    "description": "Un yelmo enano decorado con antiguas runas mágicas. Proporciona protección y sabiduría ancestral.",
+    "title": "Armadura Rohirrim",
+    "description": "Una armadura noble y resistente, con detalles que rinden homenaje a la valentía y lealtad de los guerreros de Rohan.",
     "price": 280,
     "stock": 15,
-    "category": "Armaduras",
+    "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_11",
-    "images": ["enlace_imagen_17", "enlace_imagen_18"]
+    "images": "../assets/img/armaduras_y_vestimenta/armadura_rohirrim.jpeg"
   },
   {
     "id": 12,
-    "title": "Escudo de la Dama del Lago",
-    "description": "Un escudo adornado con símbolos místicos, otorgado por la Dama del Lago. Brinda protección contra magias oscuras.",
+    "title": "Escudo del Árbol Blanco",
+    "description": "Un escudo con la emblemática imagen del Árbol Blanco de Gondor. Proporciona una defensa sólida en el fragor de la batalla.",
     "price": 320,
     "stock": 12,
-    "category": "Armaduras",
+    "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_12",
-    "images": ["enlace_imagen_11", "enlace_imagen_12"]
+    "images": "../assets/img/armaduras_y_vestimenta/escudo_gondor.jpeg"
   },
   {
     "id": 13,
-    "title": "Espada Élfica de Ceremonia",
-    "description": "Una espada elegante utilizada en ceremonias importantes. Forjada con materiales de gran nobleza.",
+    "title": "Botas de Cuero",
+    "description": "Botas resistentes y cómodas, ideales para largas travesías por terrenos variados. Fabricadas con cuero de alta calidad.",
     "price": 200,
     "stock": 15,
-    "category": "Objetos Legendarios",
+    "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_29",
-    "images": ["enlace_imagen_9", "enlace_imagen_10"]
+    "images": "../assets/img/armaduras_y_vestimenta/botas.jpeg"
   },
   {
     "id": 14,
-    "title": "Cáliz de los Antiguos",
-    "description": "Un cáliz adornado con inscripciones de los antiguos. Se dice que otorga visiones a aquellos que beben de él.",
+    "title": "Capa de Lothlorien",
+    "description": "Una capa tejida con hilos de alta calidad, otorgando al portador la posibilidad de pasar desapercibido.",
     "price": 160,
     "stock": 12,
-    "category": "Objetos Legendarios",
+    "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_30",
-    "images": ["enlace_imagen_11", "enlace_imagen_12"]
+    "images": "../assets/img/armaduras_y_vestimenta/capa.jpeg"
   },
   {
     "id": 15,
-    "title": "Amuleto del Bosque Encantado",
-    "description": "Un amuleto que canaliza la magia del bosque encantado. Protege al portador de las artimañas de las criaturas oscuras.",
+    "title": "Collar Estrella de la Tarde",
+    "description": "Un collar exquisitamente elaborado, adornado con gemas que capturan la luz y reflejan la belleza inmortal de Arwen Undómiel.",
     "price": 180,
     "stock": 18,
     "category": "Objetos Legendarios",
     "thumbnail": "enlace_thumbnail_31",
-    "images": ["enlace_imagen_13", "enlace_imagen_14"]
+    "images": "../assets/img/objetos_lejendarios/collar_arwen.jpeg"
   },
   {
     "id": 16,
     "title": "Anillo Dorado",
-    "description": "Un anillo único, con poderes ocultos a simple vista y que solo el fuego revela.",
+    "description": "Un anillo único, con poderes ocultos a simple vista y que solo el fuego revela. Atrae la atención incluso en las sombras.",
     "price": 140,
     "stock": 0,
     "category": "Objetos Legendarios",
     "thumbnail": "enlace_thumbnail_32",
-    "images": ["enlace_imagen_15", "enlace_imagen_16"]
+    "images": "../assets/img/objetos_lejendarios/anillo.jpeg"
   },
-
   {
     "id": 17,
-    "title": "Túnica de los Maestros",
-    "description": "Una túnica con un tejido que confunde a los enemigos.",
+    "title": "Llave de la Montaña Solitaria",
+    "description": "Una llave misteriosa que se dice que abre las puertas secretas de la Montaña Solitaria. Su origen está envuelto en leyendas.",
     "price": 220,
     "stock": 18,
-    "category": "Vestimenta",
+    "category": "Objetos Legendarios",
     "thumbnail": "enlace_thumbnail_17",
-    "images": ["enlace_imagen_9", "enlace_imagen_10"]
+    "images": "../assets/img/objetos_lejendarios/llave_montaña_solitaria.jpeg"
   },
   {
     "id": 18,
-    "title": "Traje Real de los Reinos Élficos",
-    "description": "Un traje real confeccionado con telas de los reinos élficos. Resalta la elegancia y la nobleza.",
+    "title": "Dardo",
+    "description": "Un dardo afilado y equilibrado, hecho para ser lanzado con precisión mortal. Su diseño elegante esconde su letalidad.",
     "price": 300,
     "stock": 12,
-    "category": "Vestimenta",
+    "category": "Objetos Legendarios",
     "thumbnail": "enlace_thumbnail_18",
-    "images": ["enlace_imagen_11", "enlace_imagen_12"]
+    "images": "../assets/img/objetos_lejendarios/dardo.jpeg"
   },
   {
     "id": 19,
-    "title": "Botas de Viajero Ent",
-    "description": "Botas fabricadas con la piel de los Ents. Proporcionan resistencia y conexión con la naturaleza.",
+    "title": "Tierra Media",
+    "description": "Un mapa detallado de la vasta Tierra Media, con rutas señaladas y lugares emblemáticos destacados. Ideal para aventureros.",
     "price": 120,
     "stock": 25,
-    "category": "Vestimenta",
+    "category": "Mapas",
     "thumbnail": "enlace_thumbnail_19",
-    "images": ["enlace_imagen_13", "enlace_imagen_14"]
+    "images": "../assets/img/mapas/mapa_tierra_media.jpeg"
   },
   {
     "id": 20,
-    "title": "Capucha de las Sombras",
-    "description": "Una capucha que otorga sombras a su portador. Perfecta para aquellos que desean pasar desapercibidos.",
+    "title": "La Comarca",
+    "description": "Un mapa encantador de la apacible Comarca, hogar de los hobbits. Perfecto para quienes buscan tranquilidad y buena comida.",
     "price": 140,
     "stock": 20,
-    "category": "Vestimenta",
+    "category": "Mapas",
     "thumbnail": "enlace_thumbnail_20",
-    "images": ["enlace_imagen_15", "enlace_imagen_16"]
+    "images": "../assets/img/mapas/mapa_comarca.jpeg"
   },
   {
     "id": 21,
-    "title": "Collar de Estrellas Fugaces",
-    "description": "Un collar encantado con piedras de estrellas fugaces. Concede a su portador una conexión especial con el cielo nocturno.",
+    "title": "Montaña Solitaria",
+    "description": "Un mapa detallado que revela los secretos de la imponente Montaña Solitaria. Tesoros y peligros esperan a los valientes.",
     "price": 150,
     "stock": 20,
-    "category": "Joyas Místicas",
+    "category": "Mapas",
     "thumbnail": "enlace_thumbnail_13",
-    "images": ["enlace_imagen_1", "enlace_imagen_2"]
+    "images": "../assets/img/mapas/mapa_montania_solitaria.jpeg"
   },
   {
     "id": 22,
-    "title": "Anillo de la Luna Plateada",
-    "description": "Un anillo con una piedra de luna plateada que potencia la magia lunar. Ideal para hechiceros nocturnos.",
+    "title": "Libro de Poemas de Rivendell",
+    "description": "Una colección de poesías élficas, llenas de gracia y melancolía. Perfecto para quienes buscan inspiración y belleza.",
     "price": 180,
     "stock": 18,
-    "category": "Joyas Místicas",
+    "category": "Literatura",
     "thumbnail": "enlace_thumbnail_14",
-    "images": ["enlace_imagen_3", "enlace_imagen_4"]
+    "images": "../assets/img/literatura/libro_poemas.jpeg"
   },
   {
     "id": 23,
-    "title": "Gargantilla de las Ruinas Antiguas",
-    "description": "Una gargantilla con reliquias de ruinas antiguas. Concede conocimientos arcanos a su portador.",
+    "title": "Libro Rojo - Historia de una Ida y una Vuelta",
+    "description": "La crónica épica de las aventuras de hobbits. Desde la Comarca hasta Mordor, una historia que perdurará en la memoria. Autores: Bilbo Bolsón, Frodo Bolsón y Samsagaz Gamgy",
     "price": 200,
     "stock": 15,
-    "category": "Joyas Místicas",
+    "category": "Literatura",
     "thumbnail": "enlace_thumbnail_15",
-    "images": ["enlace_imagen_5", "enlace_imagen_6"]
+    "images": "../assets/img/literatura/red_book.jpeg"
   },
   {
     "id": 24,
-    "title": "Pendientes de la Aurora",
-    "description": "Pendientes encantados que resplandecen con los colores de la aurora. Mejoran la percepción del portador.",
+    "title": "Antiguo Pergamino de Gondor",
+    "description": "Un pergamino antiguo con inscripciones en la lengua de Gondor. Tesoro para estudiosos y amantes de la historia de la Tierra Media.",
     "price": 160,
     "stock": 10,
-    "category": "Joyas Místicas",
+    "category": "Literatura",
     "thumbnail": "enlace_thumbnail_16",
-    "images": ["enlace_imagen_7", "enlace_imagen_8"]
-  },
-  {
-    "id": 25,
-    "title": "Hacha de Guerra Enana",
-    "description": "Un robusto hacha de guerra forjada por hábiles artesanos enanos. Temible en manos de guerreros expertos.",
-    "price": 250,
-    "stock": 15,
-    "category": "Artesanía Enana",
-    "thumbnail": "enlace_thumbnail_33",
-    "images": ["enlace_imagen_17", "enlace_imagen_18"]
-  },
-  {
-    "id": 26,
-    "title": "Escudo de Piedra Profunda",
-    "description": "Un resistente escudo tallado en piedra profunda. Proporciona una defensa inquebrantable en la batalla.",
-    "price": 220,
-    "stock": 12,
-    "category": "Artesanía Enana",
-    "thumbnail": "enlace_thumbnail_34",
-    "images": ["enlace_imagen_19", "enlace_imagen_20"]
-  },
-  {
-    "id": 27,
-    "title": "Martillo de los Talladores",
-    "description": "Un martillo especial utilizado por los maestros talladores enanos. Ideal para trabajos precisos y detallados.",
-    "price": 180,
-    "stock": 18,
-    "category": "Artesanía Enana",
-    "thumbnail": "enlace_thumbnail_35",
-    "images": ["enlace_imagen_21", "enlace_imagen_22"]
-  },
-  {
-    "id": 28,
-    "title": "Cofre del Tesoro Enano",
-    "description": "Un cofre exquisitamente adornado, digno de guardar los tesoros más preciados. Obra maestra de la artesanía enana.",
-    "price": 300,
-    "stock": 10,
-    "category": "Artesanía Enana",
-    "thumbnail": "enlace_thumbnail_36",
-    "images": ["enlace_imagen_23", "enlace_imagen_24"]
-  },
-  {
-    "id": 29,
-    "title": "Mapa Antiguo de los Reinos Perdidos",
-    "description": "Un mapa detallado de tierras misteriosas y reinos olvidados. Indispensable para exploradores intrépidos.",
-    "price": 80,
-    "stock": 14,
-    "category": "Mapas",
-    "thumbnail": "enlace_thumbnail_21",
-    "images": ["enlace_imagen_17", "enlace_imagen_18"]
-  },
-  {
-    "id": 30,
-    "title": "Atlas de las Tierras Desconocidas",
-    "description": "Un atlas que revela los secretos de las tierras aún por descubrir. Inspiración para futuros aventureros.",
-    "price": 100,
-    "stock": 22,
-    "category": "Mapas",
-    "thumbnail": "enlace_thumbnail_22",
-    "images": ["enlace_imagen_19", "enlace_imagen_20"]
-  },
-  {
-    "id": 31,
-    "title": "Mapa Estelar de las Montañas",
-    "description": "Un mapa celestial detallado que guía a los viajeros por las estrellas sobre las majestuosas montañas.",
-    "price": 90,
-    "stock": 14,
-    "category": "Mapas",
-    "thumbnail": "enlace_thumbnail_37",
-    "images": ["enlace_imagen_1", "enlace_imagen_2"]
-  },
-  {
-    "id": 32,
-    "title": "Pergamino de los Sabios",
-    "description": "Un pergamino antiguo lleno de sabiduría ancestral. Contiene secretos y conocimientos transmitidos por generaciones.",
-    "price": 120,
-    "stock": 22,
-    "category": "Mapas",
-    "thumbnail": "enlace_thumbnail_38",
-    "images": ["enlace_imagen_3", "enlace_imagen_4"]
-  },
-  {
-    "id": 33,
-    "title": "Crónicas de la Tierra Media",
-    "description": "Una recopilación de crónicas que relatan las historias más épicas y memorables de la Tierra Media.",
-    "price": 160,
-    "stock": 16,
-    "category": "Literatura",
-    "thumbnail": "enlace_thumbnail_39",
-    "images": ["enlace_imagen_5", "enlace_imagen_6"]
-  },
-  {
-    "id": 34,
-    "title": "Mapa Ilustrado de los Reinos",
-    "description": "Un detallado mapa ilustrado que muestra los paisajes y reinos más pintorescos de la Tierra Media.",
-    "price": 200,
-    "stock": 22,
-    "category": "Literatura",
-    "thumbnail": "enlace_thumbnail_40",
-    "images": ["enlace_imagen_7", "enlace_imagen_8"]
-  },
-  {
-    "id": 35,
-    "title": "Diario de un Viajero Errante",
-    "description": "Las crónicas de un viajero que ha recorrido todos los rincones de la Tierra Media. Una fuente inagotable de conocimiento.",
-    "price": 120,
-    "stock": 16,
-    "category": "Literatura",
-    "thumbnail": "enlace_thumbnail_23",
-    "images": ["enlace_imagen_21", "enlace_imagen_22"]
-  },
-  {
-    "id": 36,
-    "title": "Libro de Hechizos Olvidados",
-    "description": "Un antiguo libro que contiene hechizos perdidos en el tiempo. Atrévete a explorar las artes místicas olvidadas.",
-    "price": 180,
-    "stock": 22,
-    "category": "Literatura",
-    "thumbnail": "enlace_thumbnail_24",
-    "images": ["enlace_imagen_23", "enlace_imagen_24"]
-  },
-  {
-    "id": 37,
-    "title": "Silla de Montar Élfica",
-    "description": "Una silla de montar finamente decorada con motivos élficos. Proporciona comodidad y elegancia al jinete.",
-    "price": 160,
-    "stock": 18,
-    "category": "Monturas y Transporte",
-    "thumbnail": "enlace_thumbnail_25",
-    "images": ["enlace_imagen_1", "enlace_imagen_2"]
-  },
-  {
-    "id": 38,
-    "title": "Carroza de los Enanos",
-    "description": "Una carroza resistente, diseñada para ser tirada por poderosos carneros enanos. Ideal para travesías montañosas.",
-    "price": 240,
-    "stock": 15,
-    "category": "Monturas y Transporte",
-    "thumbnail": "enlace_thumbnail_26",
-    "images": ["enlace_imagen_3", "enlace_imagen_4"]
-  },
-  {
-    "id": 39,
-    "title": "Ala de Grifo Dorado",
-    "description": "Una imponente ala de grifo dorado, un símbolo de nobleza y valentía. Perfecta para ceremonias y exhibiciones.",
-    "price": 300,
-    "stock": 10,
-    "category": "Monturas y Transporte",
-    "thumbnail": "enlace_thumbnail_27",
-    "images": ["enlace_imagen_5", "enlace_imagen_6"]
-  },
-  {
-    "id": 40,
-    "title": "Estandarte de la Hermandad",
-    "description": "Un estandarte con los emblemas de la Hermandad de los Viajeros. Inspiración para aquellos que buscan camaradería.",
-    "price": 120,
-    "stock": 20,
-    "category": "Monturas y Transporte",
-    "thumbnail": "enlace_thumbnail_28",
-    "images": ["enlace_imagen_7", "enlace_imagen_8"]
+    "images": "../assets/img/literatura/pergamino.jpeg"
   }
 ]
