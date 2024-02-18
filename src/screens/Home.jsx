@@ -5,7 +5,6 @@ import Categories from '../components/Categories';
 const Home = ({navigation}) => {
   return (
     <View style={{ flex: 1 }}>
-      <Header title={"Tierra Media Store"} />
       <Categories navigation={navigation} />
     </View>
   );
