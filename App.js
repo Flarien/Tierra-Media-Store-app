@@ -21,7 +21,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       {productDetailId ? ( // Si productDetailId es true, devuelve ItemDetail
-        <ItemDetail productDetailId={productDetailId} />
+        <ItemDetail
+          productDetailId={productDetailId}
+          setCategorySelected={setCategorySelected}
+          category={categorySelected}
+        />
       ) : categorySelected ? ( //Si no es true, vuelve a preguntar: Hay una categoría seleccionada?
         <ItemListCategories // Si, entonces devuelve el contenido de esa categoría (osea ProductItem, que esta dentro de ItemListC...)
           setCategorySelected={setCategorySelected}
