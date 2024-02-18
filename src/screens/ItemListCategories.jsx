@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors.js";
 import ProductItem from "../components/ProductItem";
 import Search from "../components/Search.jsx";
 import allProducts from "../data/products.json";
 
-const ItemListCategories = ({ category, setCategorySelected }) => {
+const ItemListCategories = ({ navigation, route }) => {
   const [products, setProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
+
+  const {category} = route.params //recibe el parametro category desde CategoryItems (segundo parametro dentro de navigation.navigate )
 
   useEffect(() => {
     if (category) {
@@ -28,16 +30,14 @@ const ItemListCategories = ({ category, setCategorySelected }) => {
 
   return (
     <View>
-      <Text style={styles.titleSection}>{category}</Text>
       <Search onSearch={setKeyword} keyword={keyword} />
       <FlatList
         data={products}
-        renderItem={({ item }) => <ProductItem product={item} />} // Renderiza este componente por cada elemento en el array - Desestructura "item"
+        renderItem={({ item }) => (
+          <ProductItem product={item} navigation={navigation} />
+        )} // Renderiza este componente por cada elemento en el array - Desestructura "item"
         keyExtractor={(item) => item.id}
       />
-      <Pressable onPress={() => setCategorySelected("")}>
-        <Text style={styles.volver}>Volver a INICIO</Text>
-      </Pressable>
     </View>
   );
 };
