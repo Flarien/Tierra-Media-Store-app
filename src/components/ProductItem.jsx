@@ -52,4 +52,5 @@ const styles = StyleSheet.create({
     width: "35%",
     margin: 5,
   },
+
 });
