@@ -7,7 +7,7 @@
     "stock": 15,
     "category": "Armas Cuerpo a Cuerpo",
     "thumbnail": "enlace_thumbnail_1",
-    "images": "../assets/img/armas_cuerpo_a_cuerpo/espada_elfica.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/espada_elfica_tkmkqb.jpg"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "stock": 12,
     "category": "Armas Cuerpo a Cuerpo",
     "thumbnail": "enlace_thumbnail_2",
-    "images": "../assets/img/armas_cuerpo_a_cuerpo/hacha_enano.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/hacha_enano_lbrujz.jpg"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "stock": 18,
     "category": "Armas Cuerpo a Cuerpo",
     "thumbnail": "enlace_thumbnail_3",
-    "images": "../assets/img/armas_cuerpo_a_cuerpo/lanza.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/lanza_jomewk.jpg"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "stock": 10,
     "category": "Armas Cuerpo a Cuerpo",
     "thumbnail": "enlace_thumbnail_4",
-    "images": "../assets/img/armas_cuerpo_a_cuerpo/maza.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/maza_ftcalq.jpg"
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
     "stock": 14,
     "category": "Armas a Distancia",
     "thumbnail": "enlace_thumbnail_5",
-    "images": "../assets/img/armas_a_distancia/arco.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221188/armas_a_distancia/arco_yol6ce.jpg"
   },
   {
     "id": 6,
@@ -57,7 +57,7 @@
     "stock": 12,
     "category": "Armas a Distancia",
     "thumbnail": "enlace_thumbnail_6",
-    "images": "../assets/img/armas_a_distancia/ballesta.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221189/armas_a_distancia/ballesta_zs6hwp.jpg"
   },
   {
     "id": 7,
@@ -67,7 +67,7 @@
     "stock": 25,
     "category": "Armas a Distancia",
     "thumbnail": "enlace_thumbnail_7",
-    "images": "../assets/img/armas_a_distancia/carcaj.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221190/armas_a_distancia/carcaj_gri24g.jpg"
   },
   {
     "id": 8,
@@ -77,7 +77,7 @@
     "stock": 20,
     "category": "Armas a Distancia",
     "thumbnail": "enlace_thumbnail_8",
-    "images": "../assets/img/armas_a_distancia/flechas.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221190/armas_a_distancia/flechas_hjrwov.jpg"
   },
   {
     "id": 9,
@@ -87,7 +87,7 @@
     "stock": 8,
     "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_9",
-    "images": "../assets/img/armaduras_y_vestimenta/armadura_elfo.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221182/armaduras_y_vestimenta/armadura_elfo_on4rjy.jpg"
   },
   {
     "id": 10,
@@ -97,7 +97,7 @@
     "stock": 10,
     "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_10",
-    "images": "../assets/img/armaduras_y_vestimenta/armadura_enana.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221182/armaduras_y_vestimenta/armadura_enana_ozjkci.jpg"
   },
   {
     "id": 11,
@@ -107,7 +107,7 @@
     "stock": 15,
     "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_11",
-    "images": "../assets/img/armaduras_y_vestimenta/armadura_rohirrim.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221182/armaduras_y_vestimenta/armadura_elfo_on4rjy.jpg"
   },
   {
     "id": 12,
@@ -117,7 +117,7 @@
     "stock": 12,
     "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_12",
-    "images": "../assets/img/armaduras_y_vestimenta/escudo_gondor.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221183/armaduras_y_vestimenta/escudo_gondor_pzbaol.jpg"
   },
   {
     "id": 13,
@@ -127,7 +127,7 @@
     "stock": 15,
     "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_29",
-    "images": "../assets/img/armaduras_y_vestimenta/botas.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221182/armaduras_y_vestimenta/botas_aw66c2.jpg"
   },
   {
     "id": 14,
@@ -137,17 +137,17 @@
     "stock": 12,
     "category": "Armaduras y Vestimenta",
     "thumbnail": "enlace_thumbnail_30",
-    "images": "../assets/img/armaduras_y_vestimenta/capa.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221183/armaduras_y_vestimenta/capa_ychmtt.jpg"
   },
   {
     "id": 15,
     "title": "Collar Estrella de la Tarde",
     "description": "Un collar exquisitamente elaborado, adornado con gemas que capturan la luz y reflejan la belleza inmortal de Arwen Undómiel.",
     "price": 180,
-    "stock": 18,
+    "stock": 1,
     "category": "Objetos Legendarios",
     "thumbnail": "enlace_thumbnail_31",
-    "images": "../assets/img/objetos_lejendarios/collar_arwen.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221202/objetos_lejendarios/collar_arwen_lztvbe.jpg"
   },
   {
     "id": 16,
@@ -157,27 +157,27 @@
     "stock": 0,
     "category": "Objetos Legendarios",
     "thumbnail": "enlace_thumbnail_32",
-    "images": "../assets/img/objetos_lejendarios/anillo.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221199/mapas/mapa_tierra_media_pbwhyp.jpg"
   },
   {
     "id": 17,
     "title": "Llave de la Montaña Solitaria",
     "description": "Una llave misteriosa que se dice que abre las puertas secretas de la Montaña Solitaria. Su origen está envuelto en leyendas.",
     "price": 220,
-    "stock": 18,
+    "stock": 1,
     "category": "Objetos Legendarios",
     "thumbnail": "enlace_thumbnail_17",
-    "images": "../assets/img/objetos_lejendarios/llave_montaña_solitaria.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221202/objetos_lejendarios/llave_monta%C3%B1a_solitaria_sovxox.jpg"
   },
   {
     "id": 18,
     "title": "Dardo",
     "description": "Un dardo afilado y equilibrado, hecho para ser lanzado con precisión mortal. Su diseño elegante esconde su letalidad.",
     "price": 300,
-    "stock": 12,
+    "stock": 1,
     "category": "Objetos Legendarios",
     "thumbnail": "enlace_thumbnail_18",
-    "images": "../assets/img/objetos_lejendarios/dardo.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221202/objetos_lejendarios/dardo_gmqvze.jpg"
   },
   {
     "id": 19,
@@ -187,7 +187,7 @@
     "stock": 25,
     "category": "Mapas",
     "thumbnail": "enlace_thumbnail_19",
-    "images": "../assets/img/mapas/mapa_tierra_media.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221199/mapas/mapa_tierra_media_pbwhyp.jpg"
   },
   {
     "id": 20,
@@ -197,7 +197,7 @@
     "stock": 20,
     "category": "Mapas",
     "thumbnail": "enlace_thumbnail_20",
-    "images": "../assets/img/mapas/mapa_comarca.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221198/mapas/mapa_comarca_emuezq.jpg"
   },
   {
     "id": 21,
@@ -207,7 +207,7 @@
     "stock": 20,
     "category": "Mapas",
     "thumbnail": "enlace_thumbnail_13",
-    "images": "../assets/img/mapas/mapa_montania_solitaria.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221199/mapas/mapa_monta%C3%B1a_solitaria_lszik7.jpg"
   },
   {
     "id": 22,
@@ -217,7 +217,7 @@
     "stock": 18,
     "category": "Literatura",
     "thumbnail": "enlace_thumbnail_14",
-    "images": "../assets/img/literatura/libro_poemas.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221190/armas_a_distancia/flechas_hjrwov.jpg"
   },
   {
     "id": 23,
@@ -227,7 +227,7 @@
     "stock": 15,
     "category": "Literatura",
     "thumbnail": "enlace_thumbnail_15",
-    "images": "../assets/img/literatura/red_book.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221193/literatura/red_book_vvbuqm.jpg"
   },
   {
     "id": 24,
@@ -237,6 +237,6 @@
     "stock": 10,
     "category": "Literatura",
     "thumbnail": "enlace_thumbnail_16",
-    "images": "../assets/img/literatura/pergamino.jpeg"
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221193/literatura/pergamino_avksap.jpg"
   }
 ]

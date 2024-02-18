@@ -5,7 +5,7 @@ const ProductItem = ({ product }) => {
   return (
     <Card>
       <Text style={styles.list}>{product.title}</Text>
-      <Image style={styles.image} source={{ uri: product.images[0] }} />
+      <Image style={styles.image} source={{ uri: product.images }} />
     </Card>
   );
 };
