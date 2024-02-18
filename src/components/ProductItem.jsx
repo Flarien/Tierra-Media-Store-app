@@ -14,7 +14,8 @@ const ProductItem = ({ product, setProductDetailId }) => {
 
   return (
     <Pressable onPress={() => setProductDetailId(product.id)}>
-      <Card>
+      <Card
+      >
         <Text style={width < 400 ? styles.textMin : styles.text}>
           {product.title}
         </Text>
