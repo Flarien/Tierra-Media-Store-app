@@ -8,6 +8,7 @@ import {
 import Card from "./Card";
 
 const ProductItem = ({ product, setProductDetailId }) => {
+  
   const { width, height } = useWindowDimensions();
   console.log(width, height);
 
