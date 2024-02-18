@@ -5,7 +5,11 @@ import ProductItem from "../components/ProductItem";
 import Search from "../components/Search.jsx";
 import allProducts from "../data/products.json";
 
-const ItemListCategories = ({ category, setCategorySelected }) => {
+const ItemListCategories = ({
+  category,
+  setCategorySelected,
+  setProductDetailId,
+}) => {
   const [products, setProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
 
@@ -32,7 +36,9 @@ const ItemListCategories = ({ category, setCategorySelected }) => {
       <Search onSearch={setKeyword} keyword={keyword} />
       <FlatList
         data={products}
-        renderItem={({ item }) => <ProductItem product={item} />} // Renderiza este componente por cada elemento en el array - Desestructura "item"
+        renderItem={({ item }) => (
+          <ProductItem product={item} setProductDetailId={setProductDetailId} />
+        )} // Renderiza este componente por cada elemento en el array - Desestructura "item"
         keyExtractor={(item) => item.id}
       />
       <Pressable onPress={() => setCategorySelected("")}>

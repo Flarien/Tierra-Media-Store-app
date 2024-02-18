@@ -13,7 +13,7 @@ export default Card
 const styles = StyleSheet.create({
   cardContainer: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "white",
     shadowColor: "black",
