@@ -5,13 +5,11 @@ import ProductItem from "../components/ProductItem";
 import Search from "../components/Search.jsx";
 import allProducts from "../data/products.json";
 
-const ItemListCategories = ({
-  category,
-  setCategorySelected,
-  setProductDetailId,
-}) => {
+const ItemListCategories = ({ navigation, route }) => {
   const [products, setProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
+
+  const {category} = route.params //recibe el parametro category desde CategoryItems (segundo parametro dentro de navigation.navigate )
 
   useEffect(() => {
     if (category) {
@@ -37,13 +35,10 @@ const ItemListCategories = ({
       <FlatList
         data={products}
         renderItem={({ item }) => (
-          <ProductItem product={item} setProductDetailId={setProductDetailId} />
+          <ProductItem product={item} navigation={navigation} />
         )} // Renderiza este componente por cada elemento en el array - Desestructura "item"
         keyExtractor={(item) => item.id}
       />
-      <Pressable onPress={() => setCategorySelected("")}>
-        <Text style={styles.volver}>Volver a INICIO</Text>
-      </Pressable>
     </View>
   );
 };

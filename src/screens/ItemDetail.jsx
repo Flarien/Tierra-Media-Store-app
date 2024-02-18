@@ -3,15 +3,17 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors";
 import allProducts from "../data/products.json";
 
-const ItemDetail = ({ productDetailId, setCategorySelected }) => {
+const ItemDetail = ({ navigation, route }) => {
   const [product, setProduct] = useState(null);
+
+  const {id} = route.params
 
   useEffect(() => {
     const productFinded = allProducts.find(
-      (product) => product.id === productDetailId
+      (product) => product.id === id
     );
     setProduct(productFinded);
-  }, [productDetailId]);
+  }, [id]);
 
   return (
     <View style={styles.main}>
@@ -33,9 +35,6 @@ const ItemDetail = ({ productDetailId, setCategorySelected }) => {
               <Text style={styles.buyText}>Comprar</Text>
             </Pressable>
           </View>
-          <Pressable onPress={() => setCategorySelected("")}>
-            <Text style={styles.volver}>Volver a INICIO</Text>
-          </Pressable>
         </View>
       ) : (
         <View>

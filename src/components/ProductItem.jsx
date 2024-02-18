@@ -7,15 +7,14 @@ import {
 } from "react-native";
 import Card from "./Card";
 
-const ProductItem = ({ product, setProductDetailId }) => {
+const ProductItem = ({ product, navigation }) => {
   
   const { width, height } = useWindowDimensions();
   console.log(width, height);
 
   return (
-    <Pressable onPress={() => setProductDetailId(product.id)}>
-      <Card
-      >
+    <Pressable onPress={() => navigation.navigate("ItemDetail", {id: product.id})}>
+      <Card>
         <Text style={width < 400 ? styles.textMin : styles.text}>
           {product.title}
         </Text>
@@ -35,6 +34,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: "center",
     fontFamily: "Cinzel",
+    color: "white",
   },
 
   textMin: {

@@ -1,10 +1,12 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 import Card from "./Card";
 
-const CategoryItem = ({ category, setCategorySelected }) => {
+const CategoryItem = ({ category, navigation }) => {
   return (
     <Card>
-      <Pressable onPress={() => setCategorySelected(category)}>
+      <Pressable
+        onPress={() => navigation.navigate("ItemListCategories", { category })}
+      >
         <Text style={styles.list}>{category}</Text>
       </Pressable>
     </Card>
