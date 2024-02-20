@@ -1,6 +1,8 @@
 import { useFonts } from "expo-font";
 import { fonts } from "./src/global/fonts.js";
-import Navigator from "./src/navigation/Navigator.jsx";
+import { SafeAreaView } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import TabNavigator from "./src/navigation/TabNavigator.jsx";
 
 export default function App() {
   const [fontsLoaded] = useFonts(fonts);
@@ -9,5 +11,10 @@ export default function App() {
     return null;
   }
 
-  return <Navigator />;
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <StatusBar style="light" />
+      <TabNavigator />
+    </SafeAreaView>
+  );
 }
