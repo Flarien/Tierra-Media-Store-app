@@ -3,8 +3,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors";
 import { Entypo } from "@expo/vector-icons";
-import ShopStack from "./ShopStack";
 import CartStack from "./CartStack";
+import OrderStack from "./OrderStack";
+import ShopStack from "./ShopStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -38,7 +39,9 @@ const TabNavigator = () => {
                     color={focused ? colors.back_green : colors.back_beige}
                   />
                   <Text
-                    style={{ color: focused ? colors.back_green : colors.back_beige }}
+                    style={{
+                      color: focused ? colors.back_green : colors.back_beige,
+                    }}
                   >
                     Shop
                   </Text>
@@ -67,9 +70,42 @@ const TabNavigator = () => {
                     color={focused ? colors.back_green : colors.back_beige}
                   />
                   <Text
-                    style={{ color: focused ? colors.back_green : colors.back_beige }}
+                    style={{
+                      color: focused ? colors.back_green : colors.back_beige,
+                    }}
                   >
                     Shop
+                  </Text>
+                </View>
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Order"
+          component={OrderStack}
+          options={{
+            tabBarIcon: ({ focused }) => {
+              //focused hace referencia a la pestaña activa
+              return (
+                <View
+                  style={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: 5,
+                  }}
+                >
+                  <Entypo
+                    name="list"
+                    size={30}
+                    color={focused ? colors.back_green : colors.back_beige}
+                  />
+                  <Text
+                    style={{
+                      color: focused ? colors.back_green : colors.back_beige,
+                    }}
+                  >
+                    Orders
                   </Text>
                 </View>
               );
