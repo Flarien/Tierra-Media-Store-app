@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import { colors } from "../global/colors.js";
 import ProductItem from "../components/ProductItem";
 import Search from "../components/Search.jsx";
@@ -48,15 +48,6 @@ const styles = StyleSheet.create({
   titleSection: {
     fontSize: 30,
     backgroundColor: colors.secondary,
-    color: "white",
-    fontFamily: "Cinzel",
-    textAlign: "center",
-    padding: 10,
-  },
-
-  volver: {
-    fontSize: 20,
-    backgroundColor: colors.back_green,
     color: "white",
     fontFamily: "Cinzel",
     textAlign: "center",
