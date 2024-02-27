@@ -1,30 +1,50 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import { colors } from "../global/colors";
+import {
+  increment,
+  decrement,
+  incrementByAmount,
+  reset,
+} from "../features/counter/counterSlice";
 
 const Counter = () => {
-  const [inputToAdd, setInputToAdd] = useState(0);
+  const [inputToAdd, setInputToAdd] = useState("");
 
-  const count = 0;
+  const count = useSelector((state) => state.counterReducer.value);
+
+  const confirmAdd = () => {
+    dispatch(incrementByAmount(inputToAdd));
+    setInputToAdd("");
+  };
+
+  const dispatch = useDispatch();
 
   return (
     <View style={styles.container}>
       <View style={styles.rowContainer}>
-        <Pressable>
+        {/* ///Falta lógica para que no vaya menos de 0 */}
+        <Pressable onPress={() => dispatch(decrement())}>
           <Text style={styles.button}>-</Text>
         </Pressable>
-        <Text style={styles.countText}>{count}</Text>
-        <Pressable>
+        <Text style={styles.counterText}>{count}</Text>
+        <Pressable onPress={() => dispatch(increment())}>
           <Text style={styles.button}>+</Text>
         </Pressable>
       </View>
       <View style={styles.inputContainer}>
-        <TextInput placeholder="Cantidad a aumentar" style={styles.input} />
-        <Pressable>
+        <TextInput
+          placeholder="Cantidad a aumentar"
+          value={inputToAdd.toString()}
+          onChangeText={(text) => setInputToAdd(Number(text))}
+          style={styles.input}
+        />
+        <Pressable onPress={confirmAdd}>
           <Text style={styles.buttonAdd}>Add</Text>
         </Pressable>
       </View>
-      <Pressable>
+      <Pressable onPress={() => dispatch(reset())}>
         <Text style={styles.buttonReset}>Reset</Text>
       </Pressable>
     </View>
@@ -47,7 +67,7 @@ const styles = StyleSheet.create({
     gap: 20,
   },
 
-  countText: {
+  counterText: {
     fontFamily: "Cinzel",
     fontSize: 25,
     color: "black",
