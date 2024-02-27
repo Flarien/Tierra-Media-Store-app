@@ -10,7 +10,6 @@ import Card from "./Card";
 const ProductItem = ({ product, navigation }) => {
   
   const { width, height } = useWindowDimensions();
-  console.log(width, height);
 
   return (
     <Pressable onPress={() => navigation.navigate("ItemDetail", {id: product.id})}>

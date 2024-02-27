@@ -1,5 +1,4 @@
-import { StyleSheet, View } from 'react-native'
-import Header from '../components/Header';
+import { StyleSheet, View } from 'react-native';
 import Categories from '../components/Categories';
 
 const Home = ({navigation}) => {

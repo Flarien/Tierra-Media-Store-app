@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "userId": 2,
+    "createdAt": 2429342947293,
+    "items": [
+      {
+        "id": 52,
+        "title": "Espada de acero élfico",
+        "description": "Una espada forjada con destreza por los maestros herreros élficos. Su hoja reluce con la luz de las estrellas y brilla cuando hay orcos cerca.",
+        "price": 250,
+        "stock": 15,
+        "category": "Armas Cuerpo a Cuerpo",
+        "thumbnail": "enlace_thumbnail_1",
+        "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/espada_elfica_tkmkqb.jpg",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userId": 3,
+    "createdAt": 2429342947294,
+    "items": [
+      {
+        "id": 4,
+        "title": "Espada de acero élfico",
+        "description": "Una espada forjada con destreza por los maestros herreros élficos. Su hoja reluce con la luz de las estrellas y brilla cuando hay orcos cerca.",
+        "price": 250,
+        "stock": 15,
+        "category": "Armas Cuerpo a Cuerpo",
+        "thumbnail": "enlace_thumbnail_1",
+        "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/espada_elfica_tkmkqb.jpg",
+        "quantity": 1
+      }
+    ]
+  }
+
+]

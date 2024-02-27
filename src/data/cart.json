@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Espada de acero élfico",
+    "description": "Una espada forjada con destreza por los maestros herreros élficos. Su hoja reluce con la luz de las estrellas y brilla cuando hay orcos cerca.",
+    "price": 250,
+    "stock": 15,
+    "category": "Armas Cuerpo a Cuerpo",
+    "thumbnail": "enlace_thumbnail_1",
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/espada_elfica_tkmkqb.jpg",
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "title": "Hacha de Guerra Enana",
+    "description": "Un hacha robusta, hábilmente elaborada por los hábiles artesanos enanos. Ideal para enfrentarse a las hordas enemigas.",
+    "price": 220,
+    "stock": 12,
+    "category": "Armas Cuerpo a Cuerpo",
+    "thumbnail": "enlace_thumbnail_2",
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/hacha_enano_lbrujz.jpg",
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "title": "Lanza del Batalla",
+    "description": "Una lanza diseñada para perforar las líneas enemigas y mantener a raya a los adversarios en el campo de batalla.",
+    "price": 180,
+    "stock": 18,
+    "category": "Armas Cuerpo a Cuerpo",
+    "thumbnail": "enlace_thumbnail_3",
+    "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/lanza_jomewk.jpg",
+    "quantity": 1
+  }
+]
