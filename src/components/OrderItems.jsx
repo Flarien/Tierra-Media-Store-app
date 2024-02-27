@@ -1,4 +1,4 @@
-import { StyleSheet, Text, useWindowDimensions } from 'react-native'
+import { Image, StyleSheet, Text, useWindowDimensions } from 'react-native'
 import React from 'react'
 import Card from './Card';
 
@@ -10,10 +10,12 @@ const OrderItems = ({ item }) => {
       (acc, currentItem) => (acc + currentItem.quantity * currentItem.price),
       0
     );
+
   return (
     <Card>
+      <Image style={styles.image} source={{ uri: item.items[0].images }} />
       <Text style={width < 400 ? styles.textMin : styles.text}>
-        {new Date(item.createdAt).toLocaleString()}
+        {new Date(item.createdAt).toLocaleDateString()}
       </Text>
       <Text style={width < 400 ? styles.textMin : styles.text}>
         Total: {total}{" "}
@@ -40,5 +42,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: "center",
     fontFamily: "Cinzel",
+  },
+  image: {
+    minHeight: 90,
+    minWidth: 90,
+    width: "25%",
+    margin: 5,
   },
 });

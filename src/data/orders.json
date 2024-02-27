@@ -7,11 +7,9 @@
       {
         "id": 52,
         "title": "Espada de acero élfico",
-        "description": "Una espada forjada con destreza por los maestros herreros élficos. Su hoja reluce con la luz de las estrellas y brilla cuando hay orcos cerca.",
         "price": 250,
         "stock": 15,
         "category": "Armas Cuerpo a Cuerpo",
-        "thumbnail": "enlace_thumbnail_1",
         "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/espada_elfica_tkmkqb.jpg",
         "quantity": 1
       }
@@ -24,16 +22,29 @@
     "items": [
       {
         "id": 4,
-        "title": "Espada de acero élfico",
-        "description": "Una espada forjada con destreza por los maestros herreros élficos. Su hoja reluce con la luz de las estrellas y brilla cuando hay orcos cerca.",
-        "price": 250,
+        "title": "Armadura Liviana Élfica",
+        "price": 500,
         "stock": 15,
-        "category": "Armas Cuerpo a Cuerpo",
-        "thumbnail": "enlace_thumbnail_1",
-        "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221068/armas_cuerpo_a_cuerpo/espada_elfica_tkmkqb.jpg",
+        "category": "Armaduras y Vestimenta",
+        "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221182/armaduras_y_vestimenta/armadura_elfo_on4rjy.jpg",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "userId": 6,
+    "createdAt": 2429342947295,
+    "items": [
+      {
+        "id": 4,
+        "title": "Montaña Solitaria",
+        "price": 150,
+        "stock": 15,
+        "category": "Mapas",
+        "images": "https://res.cloudinary.com/dciovdqaf/image/upload/v1708221199/mapas/mapa_monta%C3%B1a_solitaria_lszik7.jpg",
         "quantity": 1
       }
     ]
   }
-
 ]
