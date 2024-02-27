@@ -10,7 +10,7 @@ const Cart = () => {
 
   useEffect(() => {
     const total = allCartItems.reduce(
-      (acc, currentItem) => (acc += currentItem.quantity * currentItem.price), 0
+      (acc, currentItem) => (acc + currentItem.quantity * currentItem.price), 0
     ); //acc=acumulado
     setTotal(total)
     setCartItems(allCartItems);
@@ -23,11 +23,19 @@ const Cart = () => {
         renderItem={({ item }) => <CartItem item={item} />}
         keyExtracttor={(cartItem) => cartItem.id}
       />
-      <Text>Total: {total} </Text>
+      <Text style={styles.total} >Total: {total} </Text>
     </View>
   );
 };
 
 export default Cart;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  total: {
+    fontFamily: "Cinzel",
+    fontSize: 25,
+    color: "black",
+    textAlign: "center",
+    paddingVertical: 6,
+  },
+});

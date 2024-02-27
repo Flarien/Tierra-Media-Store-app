@@ -1,15 +1,16 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import Card from "./Card";
 
 const CartItem = ({ item }) => {
   return (
-    <View>
+    <Card>
       <View style={styles.cartContainer}>
         <Image style={styles.image} source={{ uri: item.images }} />
-        <Text>{item.title} </Text>
-        <Text>{item.price} </Text>
+        <Text style={styles.descriptionTitle}>{item.title} </Text>
+        <Text style={styles.price}>{item.price} </Text>
       </View>
-    </View>
+    </Card>
   );
 };
 
@@ -37,22 +38,17 @@ const styles = StyleSheet.create({
     width: "35%",
     margin: 5,
   },
-  text: {
-    margin: 10,
-    width: "55%",
-    padding: 5,
-    fontSize: 18,
-    textAlign: "center",
+  descriptionTitle: {
     fontFamily: "Cinzel",
+    fontSize: 18,
     color: "white",
+    paddingVertical: 2,
   },
 
-  textMin: {
-    margin: 10,
-    width: "55%",
-    padding: 5,
-    fontSize: 14,
-    textAlign: "center",
+  price: {
     fontFamily: "Cinzel",
+    fontSize: 20,
+    color: "black",
+    paddingVertical: 4,
   },
 });
