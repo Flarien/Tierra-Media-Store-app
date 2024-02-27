@@ -10,7 +10,7 @@ import {
 } from "../features/counter/counterSlice";
 
 const Counter = () => {
-  const [inputToAdd, setInputToAdd] = useState("");
+  const [inputToAdd, setInputToAdd] = useState(0);
 
   const count = useSelector((state) => state.counterReducer.value);
 
@@ -36,7 +36,7 @@ const Counter = () => {
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Cantidad a aumentar"
-          value={inputToAdd.toString()}
+          value={inputToAdd !== 0 ? inputToAdd.toString() : ""}
           onChangeText={(text) => setInputToAdd(Number(text))}
           style={styles.input}
         />
