@@ -1,23 +1,36 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { useGetProductsByCategoryQuery } from "../services/shopService.js";
 import { FlatList, StyleSheet, View } from "react-native";
 import { colors } from "../global/colors.js";
 import ProductItem from "../components/ProductItem";
 import Search from "../components/Search.jsx";
 
 const ItemListCategories = ({ navigation }) => {
-
-  const productsFilteredByCategory = useSelector((state) => state.shopReducer.value.productsFilteredByCategory);
-
   const [products, setProducts] = useState([]);
   const [keyword, setKeyword] = useState("");
+
+  //const productsFilteredByCategory = useSelector((state) => state.shopReducer.value.productsFilteredByCategory);
+  const category = useSelector(
+    (state) => state.shopReducer.value.categorySelected
+  );
+  const {
+    data: productsFilteredByCategory,
+    isLoading,
+    error,
+  } = useGetProductsByCategoryQuery(category);
 
   //const {category} = route.params //recibe el parametro category desde CategoryItems (segundo parametro dentro de navigation.navigate )
 
   useEffect(() => {
-    const productFiltered = productsFilteredByCategory.filter((product) => product.title.includes(keyword));
-    setProducts(productFiltered);
-  }, [productsFilteredByCategory, keyword]); 
+    if (productsFilteredByCategory) {
+      const productsRaw = Object.values(productsFilteredByCategory); // productsRaw devuelve un array con los valores de las propiedades de un objeto (los productos contenidos en productsFilteredByCategory)
+      const productsFiltered = productsRaw.filter((product) => 
+      product.title.includes(keyword) // Filtra los productos por el keyword ingresado
+      );
+      setProducts(productsFiltered);
+    }
+  }, [productsFilteredByCategory, keyword]);
 
   return (
     <View>

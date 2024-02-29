@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { addItem } from "../features/shop/cartSlice";
 import { colors } from "../global/colors";
 import allProducts from "../data/products.json";
 
@@ -7,6 +9,12 @@ const ItemDetail = ({ navigation, route }) => {
   const [product, setProduct] = useState(null);
 
   const {id} = route.params
+
+  const dispatch = useDispatch()
+
+  const onAddCart = () => {
+    dispatch(addItem({...product, quantity: 1}))
+  }
 
   useEffect(() => {
     const productFinded = allProducts.find(
@@ -31,7 +39,8 @@ const ItemDetail = ({ navigation, route }) => {
               <Text style={styles.price}>{product.price} </Text>
               <Text style={styles.descriptionTextPrice}>Monedas de Oro</Text>
             </View>
-            <Pressable style={styles.buy}>
+            {/* Ejecutará la función desde cartSlice con dispatch */}
+            <Pressable style={styles.buy} onPress={onAddCart} >
               <Text style={styles.buyText}>Comprar</Text>
             </Pressable>
           </View>
