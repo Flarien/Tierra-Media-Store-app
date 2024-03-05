@@ -1,8 +1,8 @@
 //import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { usePostOrderMutation } from "../services/shopService";
 import { StyleSheet, FlatList, View, Text, Pressable } from "react-native";
 import CartItem from "../components/CartItem";
-import { usePostOrderMutation } from "../services/shopService";
 //import allCartItems from "../data/cart.json";
 
 const Cart = () => {
@@ -14,7 +14,7 @@ const Cart = () => {
   const [triggerPost, result] = usePostOrderMutation()
 
   const confirmCart = ()=> {
-    triggerPost;({total, cartItems, user: "loggedUser"})
+    triggerPost({total, cartItems, user: "loggedUser"})
   }
 
   // useEffect(() => {

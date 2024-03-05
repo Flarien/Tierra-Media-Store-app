@@ -13,7 +13,6 @@ export const cartSlice = createSlice({
 
   reducers: {
     addItem: (state, action) => {
-      //Revisar:
       const productRepeated = state.value.items.find(
         (item) => item.id === action.payload.id
       );
@@ -27,7 +26,7 @@ export const cartSlice = createSlice({
         });
         const total = itemsUpdated.reduce(
           (acc, currentItem) =>
-            (acc += currentItem.price * currentItem.quantity),
+            (acc + currentItem.price * currentItem.quantity),
           0
         );
         state.value = {
@@ -40,7 +39,7 @@ export const cartSlice = createSlice({
         state.value.items.push(action.payload);
         const total = state.value.items.reduce(
           (acc, currentItem) =>
-            (acc += currentItem.price * currentItem.quantity),
+            (acc + currentItem.price * currentItem.quantity),
           0
         );
         state.value = {
@@ -52,7 +51,23 @@ export const cartSlice = createSlice({
     },
 
     removeItem: (state, action) => {
-      //Pensar la lógica, usando el método filter, ya que devuelve otro array, ya con elemento eliminado
+      //Primero filtra los elementos que no coincidan con el id, eliminándolos/modificando el array original. Luego calcula el nuevo total, sumando los precios de los elementos ya actualizados y devuelve un array actualizado.
+
+      const updatedItems = state.value.items.filter(
+        (item) => item.id !== action.payload.id
+      );
+
+      const total = updatedItems.reduce(
+        (acc, currentItem) => acc + currentItem.price * currentItem.quantity,
+        0
+      );
+
+      state.value = {
+        ...state.value,
+        items: updatedItems,
+        total,
+        updatedAt: new Date().toLocaleString(),
+      };
     },
   },
 });

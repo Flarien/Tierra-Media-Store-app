@@ -21,7 +21,7 @@ export const shopApi = createApi({
       query: ({...order}) => ({
         url: "orders.json",
         method: "POST",
-        body: order,
+        body: order
       }),
     }),
   }),
