@@ -7,11 +7,12 @@ import AuthStack from "./AuthStack";
 const MainNavigator = () => {
   //const [user, setUser] = useState(null);
   const user = useSelector((state) => state.authReducer.value.user);
-  return(
+  return (
     <NavigationContainer>
-      {user ? <TabNavigator /> : <AuthStack />}
+      {/* {user ? <TabNavigator /> : <AuthStack />} */}
+      <TabNavigator />
     </NavigationContainer>
-    )
+  );
 };
 
 export default MainNavigator;
