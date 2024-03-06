@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors";
-import { Entypo } from "@expo/vector-icons";
+import { Entypo, FontAwesome } from "@expo/vector-icons";
 import CartStack from "./CartStack";
 import OrderStack from "./OrderStack";
 import ShopStack from "./ShopStack";
@@ -112,7 +112,7 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="My Profile"
+        name="MyProfileStack"
         component={MyProfileStack}
         options={{
           tabBarIcon: ({ focused }) => {
@@ -125,8 +125,8 @@ const TabNavigator = () => {
                   gap: 5,
                 }}
               >
-                <Entypo
-                  name="user"
+                <FontAwesome
+                  name="user-circle"
                   size={30}
                   color={focused ? colors.back_green : colors.back_beige}
                 />

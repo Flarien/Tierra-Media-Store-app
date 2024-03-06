@@ -1,14 +1,28 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { colors } from "../global/colors";
 import AddButton from "../components/AddButton";
+import { useSelector } from "react-redux";
 
-const MyProfile = () => {
-  const [image, setImage] = useState(null);
+const MyProfile = ({ navigation }) => {
+  //const [image, setImage] = useState(null);
 
+  ///////---------------->INVESTIGAR ImagePicker.launchImageLibraryAsync(options) Para la opción de agregar imagen desde la galería
+
+  const image = useSelector((state) => state.authReducer.value.imageCamera);
+
+  const launchCamera = async () => {
+    navigation.navigate("Image Selector");
+  };
   return (
     <View style={styles.container}>
-      {image ? null : (
+      {image ? (
+        <Image
+          source={{ uri: image }}
+          style={styles.image}
+          resizeMode="cover"
+        />
+      ) : (
         <>
           <Image
             source={{
@@ -17,7 +31,7 @@ const MyProfile = () => {
             style={styles.image}
             resizeMode="cover"
           />
-          <AddButton title="Agregar foto" /> 
+          <AddButton title="Agregar foto" onPress={launchCamera} />
         </>
       )}
     </View>
@@ -31,7 +45,7 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "center",
     backgroundColor: colors.back_beige,
-    height: "100%"
+    height: "100%",
   },
   image: {
     margin: 50,
