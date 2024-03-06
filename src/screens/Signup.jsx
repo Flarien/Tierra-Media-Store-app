@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSignUpMutation } from "../services/authService";
 import { useDispatch } from "react-redux";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { setUser } from "../features/auth/authSlice";
 import { signupSchema } from "../validations/signupSchema";
 import InputForm from "../components/InputForm";
 import SubmitButton from "../components/SubmitButton";
 
-const Signup = () => {
+const Signup = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [password, setPassword] = useState("");
@@ -71,6 +71,9 @@ const Signup = () => {
         isSecure={true}
       />
       <SubmitButton title={"Registrarse"} onPress={onSubmit} />
+      <Pressable onPress={() => navigation.navigate("Login")}>
+        <Text>Ir a Logearme</Text>
+      </Pressable>
     </View>
   );
 };

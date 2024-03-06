@@ -6,7 +6,6 @@ import { colors } from "../global/colors";
 import { setCameraImage } from "../features/auth/authSlice";
 import AddButton from "../components/AddButton";
 import * as ImagePicker from "expo-image-picker"
-import { log } from "console";
 
 const ImageSelector = ({ navigation }) => {
   const [image, setImage] = useState(null);
