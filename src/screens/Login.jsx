@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLoginMutation } from "../services/authService";
+import { useDispatch } from "react-redux";
 import {
   ActivityIndicator,
   Pressable,
@@ -7,12 +8,11 @@ import {
   Text,
   View,
 } from "react-native";
-import InputForm from "../components/InputForm";
-import SubmitButton from "../components/SubmitButton";
-import { useDispatch } from "react-redux";
 import { setUser } from "../features/auth/authSlice";
 import { loginSchema } from "../validations/loginSchema";
 import { colors } from "../global/colors";
+import InputForm from "../components/InputForm";
+import SubmitButton from "../components/SubmitButton";
 
 const Login = ({ navigation }) => {
   //Revisar lógica de estados y métodos

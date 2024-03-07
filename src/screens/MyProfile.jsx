@@ -1,8 +1,8 @@
 //import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Image, StyleSheet, View } from "react-native";
 import { colors } from "../global/colors";
 import AddButton from "../components/AddButton";
-import { useSelector } from "react-redux";
 
 const MyProfile = ({ navigation }) => {
   //const [image, setImage] = useState(null);
