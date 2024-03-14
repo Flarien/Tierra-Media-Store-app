@@ -5,9 +5,6 @@ import Counter from "../components/Counter";
 import CategoryItem from "./CategoryItem";
 
 const Categories = ({ navigation }) => {
-  //const categories = useSelector(state => state.shopReducer.value.categories)
-
-  //////----------------> Buscar loader y configurar mensaje de error
   const { data, isLoading, error } = useGetCategoriesQuery();
 
   return (

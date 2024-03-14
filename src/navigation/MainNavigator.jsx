@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
@@ -11,7 +10,6 @@ import TabNavigator from "./TabNavigator";
 import AuthStack from "./AuthStack";
 
 const MainNavigator = () => {
-  //const [user, setUser] = useState(null);
   const { user, localId } = useSelector((state) => state.authReducer.value);
 
   const { data, error, isLoading } = useGetProfileImageQuery(localId);
@@ -30,7 +28,6 @@ const MainNavigator = () => {
 
   return (
     <NavigationContainer>
-      {/* <TabNavigator /> */}
       {user ? <TabNavigator /> : <AuthStack />}
     </NavigationContainer>
   );

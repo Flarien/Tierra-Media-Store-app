@@ -1,13 +1,9 @@
-//import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Image, StyleSheet, View } from "react-native";
 import { colors } from "../global/colors";
 import AddButton from "../components/AddButton";
 
 const MyProfile = ({ navigation }) => {
-  //const [image, setImage] = useState(null);
-
-  ///////---------------->INVESTIGAR ImagePicker.launchImageLibraryAsync(options) Para la opción de agregar imagen desde la galería
 
   const image = useSelector((state) => state.authReducer.value.imageCamera);
 

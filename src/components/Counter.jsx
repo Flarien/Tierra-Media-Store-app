@@ -24,7 +24,6 @@ const Counter = () => {
   return (
     <View style={styles.container}>
       <View style={styles.rowContainer}>
-        {/* ///Falta lógica para que no vaya menos de 0 */}
         <Pressable onPress={() => dispatch(decrement())}>
           <Text style={styles.button}>-</Text>
         </Pressable>

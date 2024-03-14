@@ -16,7 +16,7 @@ const InputForm = ({ label, error, onChange, isSecure }) => {
         style={styles.input}
         value={input}
         onChangeText={onChangeText}
-        secureTextEntry={isSecure} //si lo uso para contraseña, muestra circulitos, en lugar de los caracteres ingresados
+        secureTextEntry={isSecure} 
       />
       {error ? <Text style={styles.error}>{error}</Text> : null}
     </View>

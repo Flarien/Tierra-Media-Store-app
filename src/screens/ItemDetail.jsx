@@ -39,7 +39,6 @@ const ItemDetail = ({ navigation, route }) => {
               <Text style={styles.price}>{product.price} </Text>
               <Text style={styles.descriptionTextPrice}>Monedas de Oro</Text>
             </View>
-            {/* Ejecutará la función desde cartSlice con dispatch */}
             <Pressable style={styles.buy} onPress={onAddCart} >
               <Text style={styles.buyText}>Comprar</Text>
             </Pressable>

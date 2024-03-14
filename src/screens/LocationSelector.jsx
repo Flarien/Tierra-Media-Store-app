@@ -63,7 +63,6 @@ const LocationSelector = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.texto}>Mi domicilio</Text>
-      {/* <FlatList></FlatList> con directions */}
       {location.latitude ? (
         <View>
           <Text style={styles.descriptionText}>
@@ -73,7 +72,6 @@ const LocationSelector = ({ navigation }) => {
             Longitud: {location.longitude}
           </Text>
           <MapPreview location={location} />
-          {/* Revisar */}
           <Text style={styles.descriptionText}>{address}</Text>
           <AddButton title={"Confirmar dirección"} onPress={onConfirmAddress} />
         </View>

@@ -23,7 +23,6 @@ const TabNavigator = () => {
         component={ShopStack}
         options={{
           tabBarIcon: ({ focused }) => {
-            //focused hace referencia a la pestaña activa
             return (
               <View
                 style={{
@@ -54,7 +53,6 @@ const TabNavigator = () => {
         component={CartStack}
         options={{
           tabBarIcon: ({ focused }) => {
-            //focused hace referencia a la pestaña activa
             return (
               <View
                 style={{
@@ -85,7 +83,6 @@ const TabNavigator = () => {
         component={OrderStack}
         options={{
           tabBarIcon: ({ focused }) => {
-            //focused hace referencia a la pestaña activa
             return (
               <View
                 style={{
@@ -116,7 +113,6 @@ const TabNavigator = () => {
         component={MyProfileStack}
         options={{
           tabBarIcon: ({ focused }) => {
-            //focused hace referencia a la pestaña activa
             return (
               <View
                 style={{

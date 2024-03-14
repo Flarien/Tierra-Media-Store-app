@@ -15,7 +15,7 @@ import InputForm from "../components/InputForm";
 import SubmitButton from "../components/SubmitButton";
 
 const Login = ({ navigation }) => {
-  //Revisar lógica de estados y métodos
+
   const [email, setEmail] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [password, setPassword] = useState("");
@@ -64,7 +64,6 @@ const Login = ({ navigation }) => {
         isSecure={true}
       />
       {result.isLoading ? (
-        //Probar otra lógica, quizás dentro del onSubmit, aplicando opacity al boton mientras carga el loader?
         <ActivityIndicator size={100} color={colors.secondary} />
       ) : (
         <SubmitButton title={"Login"} onPress={onSubmit} />
