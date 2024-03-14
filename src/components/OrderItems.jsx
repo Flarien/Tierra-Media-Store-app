@@ -1,5 +1,4 @@
 import { Image, StyleSheet, Text, useWindowDimensions } from 'react-native'
-import React from 'react'
 import Card from './Card';
 
 const OrderItems = ({ item }) => {
