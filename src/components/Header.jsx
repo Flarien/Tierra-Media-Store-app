@@ -1,16 +1,35 @@
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
-import { colors } from '../global/colors'
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { colors } from "../global/colors";
 import Constants from "expo-constants";
+import { MaterialIcons } from "@expo/vector-icons";
+import { logout } from "../features/auth/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteSession } from "../db";
 
 const Header = ({ title }) => {
+  //useSelector --> REDUX
+  const { localId, user } = useSelector((state) => state.authReducer.value);
+
+  const dispatch = useDispatch();
+
+  const onLogout = async () => {
+    dispatch(logout());
+    const deletedSession = await deleteSession({ localId });
+    console.log(deletedSession);
+  };
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.titleSection}>{title}</Text>
-    </SafeAreaView>
+      {user ? (
+        <Pressable style={styles.logoutIcon} onPress={onLogout}>
+          <MaterialIcons name="logout" size={24} color={colors.back_green} />
+        </Pressable>
+      ) : null}
+    </View>
   );
 };
 
-export default Header
+export default Header;
 
 const styles = StyleSheet.create({
   container: {
@@ -26,4 +45,10 @@ const styles = StyleSheet.create({
     padding: 10,
     fontFamily: "Cinzel",
   },
-}); 
+
+  logoutIcon: {
+    right: 15,
+    marginTop: 55,
+    position: "absolute",
+  },
+});

@@ -6,9 +6,10 @@ import {
   useGetUserLocationQuery,
 } from "../services/shopService";
 import { NavigationContainer } from "@react-navigation/native";
-import { setProfileImage, setUserLocation } from "../features/auth/authSlice";
+import { setProfileImage, setUser, setUserLocation } from "../features/auth/authSlice";
 import TabNavigator from "./TabNavigator";
 import AuthStack from "./AuthStack";
+import { fetchSession } from "../db";
 
 const MainNavigator = () => {
   //const [user, setUser] = useState(null);
@@ -18,6 +19,22 @@ const MainNavigator = () => {
   const { data: location } = useGetUserLocationQuery(localId);
 
   const dispatch = useDispatch();
+
+  useEffect(()=> {
+    //Esta funcion se autoejecuta
+    (async () => {
+      try {
+        const session = await fetchSession()
+        console.log(session);
+        if (session?.row.lenght){
+          const user = session.rows._array[0]
+          dispatch(setUser(user))
+        }
+      } catch (error){
+        console.log(error.message);
+      }
+    })()
+  },[])
 
   useEffect(() => {
     if (data) {

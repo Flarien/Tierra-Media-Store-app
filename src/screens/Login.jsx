@@ -13,6 +13,7 @@ import { loginSchema } from "../validations/loginSchema";
 import { colors } from "../global/colors";
 import InputForm from "../components/InputForm";
 import SubmitButton from "../components/SubmitButton";
+import { insertSession } from "../db";
 
 const Login = ({ navigation }) => {
   //Revisar lógica de estados y métodos
@@ -46,10 +47,18 @@ const Login = ({ navigation }) => {
           break;
       }
     }
-  };
+  }
+
   useEffect(() => {
     if (result.data) {
       dispatch(setUser(result.data));
+      insertSession({
+        email: result.data.email,
+        localId: result.data.localId,
+        token: result.data.idToken,
+      })
+        .then(result => console.log(result))
+        .catch(err => console.log(err.message))
     }
   }, [result]);
 
@@ -94,7 +103,7 @@ const styles = StyleSheet.create({
   descriptionTitle: {
     fontFamily: "Cinzel",
     fontSize: 18,
-    color: "white",
+    color: "green",
     paddingVertical: 2,
     margin: 10,
   },

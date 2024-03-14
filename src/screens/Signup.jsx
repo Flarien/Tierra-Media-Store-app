@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   descriptionTitle: {
     fontFamily: "Cinzel",
     fontSize: 18,
-    color: "white",
+    color: "green",
     paddingVertical: 2,
     margin: 10,
   },

@@ -47,10 +47,30 @@ export const authSlice = createSlice({
         },
       };
     },
+    logout: (state) => {
+      state.value = {
+        user: null,
+        token: null,
+        imageCamera: null,
+        localId: null,
+        profileImage: null,
+        location: {
+          latitude: null,
+          longitude: null,
+          address: null,
+        },
+      };
+    }
   },
 });
 
-export const { setUser, clearUser, setCameraImage, setProfileImage, setUserLocation } =
-  authSlice.actions;
+export const {
+  setUser,
+  clearUser,
+  setCameraImage,
+  setProfileImage,
+  setUserLocation,
+  logout,
+} = authSlice.actions;
 
 export default authSlice.reducer;
