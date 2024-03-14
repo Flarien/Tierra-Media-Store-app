@@ -19,7 +19,7 @@ const ItemListCategories = ({ navigation }) => {
     isLoading,
     error,
   } = useGetProductsByCategoryQuery(category);
-
+  console.log(isLoading,error);
   //const {category} = route.params //recibe el parametro category desde CategoryItems (segundo parametro dentro de navigation.navigate )
 
   useEffect(() => {

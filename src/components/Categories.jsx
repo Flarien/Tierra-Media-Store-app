@@ -12,7 +12,7 @@ const Categories = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1 }}>
-      <Counter />
+      {/* <Counter /> */}
       <FlatList
         data={data}
         renderItem={({ item }) => (

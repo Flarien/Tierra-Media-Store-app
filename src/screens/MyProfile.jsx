@@ -14,6 +14,11 @@ const MyProfile = ({ navigation }) => {
   const launchCamera = async () => {
     navigation.navigate("Image Selector");
   };
+
+  const launchLocation = async () => {
+    navigation.navigate("Location Selector");
+  };
+
   return (
     <View style={styles.container}>
       {image ? (
@@ -32,6 +37,7 @@ const MyProfile = ({ navigation }) => {
             resizeMode="cover"
           />
           <AddButton title="Agregar foto" onPress={launchCamera} />
+          <AddButton title="Agregar domicilio" onPress={launchLocation} />
         </>
       )}
     </View>
