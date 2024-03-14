@@ -72,7 +72,7 @@ const Signup = ({ navigation }) => {
       />
       <SubmitButton title={"Registrarse"} onPress={onSubmit} />
       <Pressable onPress={() => navigation.navigate("Login")}>
-        <Text>Ir a Logearme</Text>
+        <Text style={styles.descriptionTitle}>Ir a Logearme</Text>
       </Pressable>
     </View>
   );
@@ -80,4 +80,12 @@ const Signup = ({ navigation }) => {
 
 export default Signup;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  descriptionTitle: {
+    fontFamily: "Cinzel",
+    fontSize: 18,
+    color: "white",
+    paddingVertical: 2,
+    margin: 10,
+  },
+});

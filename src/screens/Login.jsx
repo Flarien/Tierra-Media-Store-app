@@ -66,12 +66,12 @@ const Login = ({ navigation }) => {
       {result.isLoading ? (
         //Probar otra lógica, quizás dentro del onSubmit, aplicando opacity al boton mientras carga el loader?
         <ActivityIndicator size={100} color={colors.secondary} />
-        ) : (
+      ) : (
         <SubmitButton title={"Login"} onPress={onSubmit} />
       )}
-        <Pressable onPress={() => navigation.navigate("Signup")}>
-          <Text>Ir a Registrarme</Text>
-        </Pressable>
+      <Pressable onPress={() => navigation.navigate("Signup")}>
+        <Text style={styles.descriptionTitle}>Ir a Registrarme</Text>
+      </Pressable>
     </View>
   );
 };
@@ -90,5 +90,12 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: 22,
+  },
+  descriptionTitle: {
+    fontFamily: "Cinzel",
+    fontSize: 18,
+    color: "white",
+    paddingVertical: 2,
+    margin: 10,
   },
 });
