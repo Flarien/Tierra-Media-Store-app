@@ -14,7 +14,6 @@ import { fetchSession } from "../db";
 const MainNavigator = () => {
   //const [user, setUser] = useState(null);
   const { user, localId } = useSelector((state) => state.authReducer.value);
-
   const { data, error, isLoading } = useGetProfileImageQuery(localId);
   const { data: location } = useGetUserLocationQuery(localId);
 
@@ -25,8 +24,7 @@ const MainNavigator = () => {
     (async () => {
       try {
         const session = await fetchSession()
-        console.log(session);
-        if (session?.row.lenght){
+        if (session?.rows.lenght){
           const user = session.rows._array[0]
           dispatch(setUser(user))
         }

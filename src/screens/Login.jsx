@@ -24,6 +24,7 @@ const Login = ({ navigation }) => {
   const [triggerLogin, result] = useLoginMutation();
 
   const dispatch = useDispatch();
+  
   const onSubmit = () => {
     triggerLogin({ email, password });
 

@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {usePostProfileImageMutation} from "../services/shopService"
+import { usePostProfileImageMutation } from "../services/shopService";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors";
 import { setCameraImage } from "../features/auth/authSlice";
 import AddButton from "../components/AddButton";
-import * as ImagePicker from "expo-image-picker"
+import * as ImagePicker from "expo-image-picker";
 
 const ImageSelector = ({ navigation }) => {
   const [image, setImage] = useState(null);
-  const {localId} = useSelector(state => state.authReducer.value)
+  const { localId } = useSelector((state) => state.authReducer.value);
   const [triggersaveProfileImage, result] = usePostProfileImageMutation();
 
   const dispatch = useDispatch();
 
   const verifyCameraPermissions = async () => {
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync()
+    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
     if (!granted) {
       return false;
     }
@@ -29,21 +29,24 @@ const ImageSelector = ({ navigation }) => {
       let result = await ImagePicker.launchCameraAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
         allaowsEditing: true,
-        aspect: [9,16],
+        aspect: [9, 16],
         base64: true,
-        quality: 0.2,      
+        quality: 1,
       });
+      // if (!result.canceled) {
+      //   setImage(`data:image/jpeg;base64,${result.assets[0].base64}`);
+      // }
       if (!result.canceled) {
-        setImage(`data:image/jpeg;base64,${result.assets[0].base64}`)
+        setImage(result.assets[0].uri);
       }
     }
   };
 
   const confirmImage = () => {
-    dispatch(setCameraImage(image))
-    triggersaveProfileImage({image, localId})
+    dispatch(setCameraImage(image));
+    triggersaveProfileImage({ localId, image });
     console.log(result);
-    navigation.goBack()
+    navigation.goBack();
   };
 
   return (

@@ -28,7 +28,7 @@ export const shopApi = createApi({
       query: (localId) => `profileImages/${localId}.json`,
     }),
     postProfileImage: builder.mutation({
-      query: ({ image, localId }) => ({
+      query: ({localId, image }) => ({
         url: `profileImages/${localId}.json`,
         method: "PUT",
         body: { image: image },
@@ -38,7 +38,7 @@ export const shopApi = createApi({
       query: (localId) => `locations/${localId}.json`,
     }),
     postUserLocation: builder.mutation({
-      query: ({ location, localId }) => ({
+      query: ({ localId, location  }) => ({
         url: `locations/${localId}.json`,
         method: "PUT",
         body: {

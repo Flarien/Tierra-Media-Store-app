@@ -14,11 +14,13 @@ const ItemListCategories = ({ navigation }) => {
   const category = useSelector(
     (state) => state.shopReducer.value.categorySelected
   );
+
   const {
     data: productsFilteredByCategory,
     isLoading,
     error,
   } = useGetProductsByCategoryQuery(category);
+  
   console.log(isLoading,error);
   //const {category} = route.params //recibe el parametro category desde CategoryItems (segundo parametro dentro de navigation.navigate )
 

@@ -5,7 +5,7 @@ export const cartSlice = createSlice({
   initialState: {
     value: {
       user: "userLogged",
-      updatedAt: Date.now().toLocaleString(),
+      updatedAt: new Date().toLocaleString(),
       total: null,
       items: [],
     },

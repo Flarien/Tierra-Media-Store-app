@@ -1,5 +1,4 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StyleSheet } from "react-native";
 import Home from "../screens/Home";
 import ItemDetail from "../screens/ItemDetail";
 import ItemListCategories from "../screens/ItemListCategories";
@@ -20,7 +19,7 @@ const Navigator = () => {
                     ? "Categorías"
                     : route.name === "ItemListCategories"
                     ? route.params.category
-                    : "Detalles"
+                    : "Detalle"
                 }
               />
             );
@@ -38,5 +37,3 @@ const Navigator = () => {
 };
 
 export default Navigator;
-
-const styles = StyleSheet.create({});

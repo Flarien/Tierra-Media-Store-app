@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
+import { useDispatch, useSelector } from "react-redux";
+import { usePostUserLocationMutation } from "../services/shopService";
 import { StyleSheet, Text, View } from "react-native";
+import { setUserLocation } from "../features/auth/authSlice";
 import { colors } from "../global/colors";
 import MapPreview from "../components/MapPreview";
-import { useDispatch, useSelector } from "react-redux";
 import AddButton from "../components/AddButton";
-import { setUserLocation } from "../features/auth/authSlice";
-import { usePostUserLocationMutation } from "../services/shopService";
 
 const LocationSelector = ({ navigation }) => {
   const [location, setLocation] = useState({ latitude: "", longitude: "" });
@@ -16,7 +16,7 @@ const LocationSelector = ({ navigation }) => {
   const [triggerPostAddress, result] = usePostUserLocationMutation();
   console.log(result);
 
-  dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {

@@ -19,7 +19,7 @@ const Signup = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const onSubmit = () => {
-    //Revisar lógica
+    //Revisar lógica // Agregar mensaje tipo toast de registro exitoso
     try {
       setErrorMail("");
       setErrorPassword("");
