@@ -24,7 +24,7 @@ const MainNavigator = () => {
     (async () => {
       try {
         const session = await fetchSession()
-        if (session?.rows.lenght){
+        if (session?.rows.length){
           const user = session.rows._array[0]
           dispatch(setUser(user))
         }
