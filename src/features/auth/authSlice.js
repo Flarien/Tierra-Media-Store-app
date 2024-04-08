@@ -48,6 +48,18 @@ export const authSlice = createSlice({
         },
       };
     },
+    updateUserProfile: (state, action) => {
+      state.value = {
+        ...state.value,
+        user: action.payload.name,
+        profileImage: action.payload.profileImage,
+        location: {
+          latitude: action.payload.latitude,
+          longitude: action.payload.longitude,
+          address: action.payload.address,
+        },
+      };
+    },
     logout: (state) => {
       state.value = {
         user: null,
@@ -61,7 +73,7 @@ export const authSlice = createSlice({
           address: null,
         },
       };
-    }
+    },
   },
 });
 
@@ -71,6 +83,7 @@ export const {
   setCameraImage,
   setProfileImage,
   setUserLocation,
+  updateUserProfile,
   logout,
 } = authSlice.actions;
 

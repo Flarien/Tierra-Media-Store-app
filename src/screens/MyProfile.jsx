@@ -9,21 +9,24 @@ const MyProfile = ({ navigation }) => {
 
   ///////---------------->INVESTIGAR ImagePicker.launchImageLibraryAsync(options) Para la opción de agregar imagen desde la galería
 
-  const image = useSelector((state) => state.authReducer.value.imageCamera);
+  // const image = useSelector((state) => state.authReducer.value.imageCamera);
 
-  const launchCamera = async () => {
-    navigation.navigate("Image Selector");
-  };
+  // const launchCamera = async () => {
+  //   navigation.navigate("Image Selector");
+  // };
 
-  const launchLocation = async () => {
-    navigation.navigate("Location Selector");
-  };
+  // const launchLocation = async () => {
+  //   navigation.navigate("Location Selector");
+  // };
+  const { profileImage, imageCamera } = useSelector(
+    (state) => state.authReducer.value
+  );
 
   return (
     <View style={styles.container}>
-      {image ? (
+      {profileImage || imageCamera ? (
         <Image
-          source={{ uri: image }}
+          source={{ uri: profileImage || imageCamera }}
           style={styles.image}
           resizeMode="cover"
         />
@@ -36,8 +39,14 @@ const MyProfile = ({ navigation }) => {
             style={styles.image}
             resizeMode="cover"
           />
-          <AddButton title="Agregar foto" onPress={launchCamera} />
-          <AddButton title="Agregar domicilio" onPress={launchLocation} />
+          <AddButton
+            title="Agregar foto"
+            onPress={() => navigation.navigate("Image Selector")}
+          />
+          <AddButton
+            title="Agregar domicilio"
+            onPress={() => navigation.navigate("Location Selector")}
+          />
         </>
       )}
     </View>
