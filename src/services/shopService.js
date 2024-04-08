@@ -31,7 +31,7 @@ export const shopApi = createApi({
       query: ({localId, image }) => ({
         url: `profileImages/${localId}.json`,
         method: "PUT",
-        body: {data: { image: image }},
+        body:  { image: image },
       }),
     }),
     getUserLocation: builder.query({

@@ -10,7 +10,7 @@ import * as ImagePicker from "expo-image-picker";
 const ImageSelector = ({ navigation }) => {
   const [image, setImage] = useState(null);
   const { localId } = useSelector((state) => state.authReducer.value);
-  const [triggersaveProfileImage, result] = usePostProfileImageMutation();
+  const [triggerSaveProfileImage, result] = usePostProfileImageMutation();
 
   const dispatch = useDispatch();
 
@@ -44,7 +44,7 @@ const ImageSelector = ({ navigation }) => {
 
   const confirmImage = () => {
     dispatch(setCameraImage(image));
-    triggersaveProfileImage({ localId, image });
+    triggerSaveProfileImage({ localId, image });
     console.log(result);
     navigation.goBack();
   };
