@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { usePostProfileImageMutation } from "../services/shopService";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors";
-import { setCameraImage } from "../features/auth/authSlice";
+import { setCameraImage, setProfileImage } from "../features/auth/authSlice";
 import AddButton from "../components/AddButton";
 import * as ImagePicker from "expo-image-picker";
 
@@ -11,7 +11,6 @@ const ImageSelector = ({ navigation }) => {
   const [image, setImage] = useState(null);
   const { localId } = useSelector((state) => state.authReducer.value);
   const [triggerSaveProfileImage, result] = usePostProfileImageMutation();
-
   const dispatch = useDispatch();
 
   const verifyCameraPermissions = async () => {
@@ -24,26 +23,48 @@ const ImageSelector = ({ navigation }) => {
 
   const pickImage = async () => {
     const isCameraOk = await verifyCameraPermissions();
-
     if (isCameraOk) {
       let result = await ImagePicker.launchCameraAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
-        allaowsEditing: true,
-        aspect: [9, 16],
+        allowsEditing: true,
+        aspect: [4, 4],
         base64: true,
         quality: 1,
       });
-      // if (!result.canceled) {
-      //   setImage(`data:image/jpeg;base64,${result.assets[0].base64}`);
-      // }
+      
+      
       if (!result.canceled) {
         setImage(result.assets[0].uri);
       }
     }
   };
 
+  const requestGalleryPermissions = async () => {
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (status !== "granted") {
+      alert("Se requieren permisos para acceder a la galería de imágenes.");
+    }
+  };
+
+  const pickImageFromGallery = async () => {
+    await requestGalleryPermissions();
+
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 4],
+      base64: true,
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
+  };
+
   const confirmImage = () => {
     dispatch(setCameraImage(image));
+    dispatch(setProfileImage(image));
     triggerSaveProfileImage({ localId, image });
     console.log(result);
     navigation.goBack();
@@ -63,6 +84,10 @@ const ImageSelector = ({ navigation }) => {
             <Text>No hay foto para mostrar...</Text>
           </View>
           <AddButton title="Tomar una foto" onPress={pickImage} />
+          <AddButton
+            title="Seleccionar desde galería"
+            onPress={pickImageFromGallery}
+          />
         </>
       )}
     </View>
