@@ -5,8 +5,6 @@ import AddButton from "../components/AddButton";
 
 const MyProfile = ({ navigation }) => {
 
-  ///////---------------->INVESTIGAR ImagePicker.launchImageLibraryAsync(options) Para la opción de agregar imagen desde la galería
-
   const { profileImage, imageCamera } = useSelector(
     (state) => state.authReducer.value
   );

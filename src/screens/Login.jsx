@@ -26,17 +26,20 @@ const Login = ({ navigation }) => {
   const dispatch = useDispatch();
   
   const onSubmit = () => {
-    triggerLogin({ email, password });
-
     try {
       setErrorMail("");
       setErrorPassword("");
 
       loginSchema.validateSync({ password, email });
+
       triggerLogin({ email, password });
       console.log("Registro exitoso");
     } catch (err) {
       console.log("path", err.path);
+
+      if (err.message === "Usuario no registrado") {
+      setErrorMail("Este usuario no está registrado.");
+    } else {
       switch (err.path) {
         case "email":
           setErrorMail(err.message);
@@ -47,6 +50,7 @@ const Login = ({ navigation }) => {
         default:
           break;
       }
+    }
     }
   }
 

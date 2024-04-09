@@ -26,8 +26,10 @@ const Signup = ({ navigation }) => {
       setErrorConfirmPassword("");
 
       signupSchema.validateSync({ password, confirmPassword, email });
+
       triggerSignup({ email, password });
       console.log("Registro exitoso");
+      
     } catch (err) {
       console.log("path", err.path);
       switch (err.path) {
@@ -48,7 +50,7 @@ const Signup = ({ navigation }) => {
 
   useEffect(() => {
     if (result.data) {
-      dispatch(setUser(result));
+      dispatch(setUser(result.data));
     }
   }, [result]);
 
@@ -70,9 +72,9 @@ const Signup = ({ navigation }) => {
         onChange={setConfirmPassword}
         isSecure={true}
       />
-      <SubmitButton title={"Registrarse"} onPress={onSubmit} />
+      <SubmitButton title={"Registrarme"} onPress={onSubmit} />
       <Pressable onPress={() => navigation.navigate("Login")}>
-        <Text style={styles.descriptionTitle}>Ir a Logearme</Text>
+        <Text style={styles.descriptionTitle}>Ya tengo cuenta: Ir a Login</Text>
       </Pressable>
     </View>
   );

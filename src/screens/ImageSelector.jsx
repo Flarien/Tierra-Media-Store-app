@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   noPhotoContainer: {
     width: 200,
     height: 200,
-    borderWidth: 2,
+    borderWidth: 4,
     borderColor: colors.back_green,
     padding: 10,
     justifyContent: "center",
