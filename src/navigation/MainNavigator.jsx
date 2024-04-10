@@ -13,6 +13,7 @@ import {
 } from "../features/auth/authSlice";
 import { ActivityIndicator, View } from "react-native";
 import { fetchSession } from "../db";
+import Toast from "react-native-toast-message";
 import TabNavigator from "./TabNavigator";
 import AuthStack from "./AuthStack";
 
@@ -67,6 +68,7 @@ const MainNavigator = () => {
     <NavigationContainer>
       {/* <TabNavigator /> */}
       {user ? <TabNavigator /> : <AuthStack />}
+      <Toast />
     </NavigationContainer>
   );
 };

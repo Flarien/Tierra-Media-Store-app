@@ -23,6 +23,10 @@ export const shopApi = createApi({
         method: "POST",
         body: order,
       }),
+      onError: (error) => {
+        console.error("Error al enviar la orden:", error);
+        // Aquí puedes agregar la lógica para mostrar un mensaje de error al usuario
+      },
     }),
     getOrders: builder.query({
       query: () => "orders.json",

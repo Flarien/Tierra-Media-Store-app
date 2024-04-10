@@ -15,7 +15,7 @@ const UserIcon = ({ focused }) => {
         <Image source={{ uri: profileImage }} style={styles.profileImage} />
       ) : (
         <FontAwesome
-          name="user-circle"
+          name={user ? "user-circle" : "user"}
           size={30}
           color={focused ? colors.back_green : colors.back_beige}
         />

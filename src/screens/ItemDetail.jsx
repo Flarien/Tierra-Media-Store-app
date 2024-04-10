@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { ActivityIndicator, Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Image, Pressable, ScrollView, StyleSheet, Text, ToastAndroid, View } from "react-native";
 import { addItem } from "../features/shop/cartSlice";
 import { colors } from "../global/colors";
-import allProducts from "../data/products.json";
+import allProducts from '../data/products.json';
 import Counter from "../components/Counter";
+import Toast from "react-native-toast-message";
 
 const ItemDetail = ({ route }) => {
   const [product, setProduct] = useState(null);
@@ -14,10 +15,25 @@ const ItemDetail = ({ route }) => {
   const {id} = route.params
 
   const dispatch = useDispatch()
+  
+  const showToast = () => {
+    Toast.show({
+      type: "success",
+      text1: "¡Agregado al carrito!",
+      visibilityTime: 1000,
+    });
+  }
 
   const onAddCart = () => {
     dispatch(addItem({ ...product, quantity: selectedQuantity }));
-    console.log(onAddCart);
+
+      // Toast.show({
+      //   type: "success",
+      //   text1: "¡Agregado al carrito!",
+      //   visibilityTime: 1000,
+      // });
+      showToast()
+      
   }
 
   useEffect(() => {

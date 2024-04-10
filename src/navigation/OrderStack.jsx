@@ -12,7 +12,7 @@ const  OrderStack = () => {
         header: () => <Header title="Órdenes" />
       }}
     >
-      <Stack.Screen name="Order" component={Orders} />
+      <Stack.Screen name="Orders" component={Orders} />
     </Stack.Navigator>
   );
 };
