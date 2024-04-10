@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { addItem } from "../features/shop/cartSlice";
 import { colors } from "../global/colors";
 import allProducts from "../data/products.json";
+import Counter from "../components/Counter";
 
-const ItemDetail = ({ navigation, route }) => {
+const ItemDetail = ({ route }) => {
   const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
 
   const {id} = route.params
 
   const dispatch = useDispatch()
 
   const onAddCart = () => {
-    dispatch(addItem({...product, quantity: 1}))
+    dispatch(addItem({ ...product, quantity: selectedQuantity }));
+    console.log(onAddCart);
   }
 
   useEffect(() => {
@@ -21,34 +25,46 @@ const ItemDetail = ({ navigation, route }) => {
       (product) => product.id === id
     );
     setProduct(productFinded);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
   }, [id]);
 
   return (
     <View style={styles.main}>
-      {product ? (
-        <View style={styles.container}>
-          <Image
-            source={{ uri: product.images }}
-            style={styles.image}
-            resizeMode="cover"
-          />
-          <View style={styles.textContainer}>
-            <Text style={styles.descriptionTitle}>{product.title} </Text>
-            <Text style={styles.descriptionText}>{product.description} </Text>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text style={styles.price}>{product.price} </Text>
-              <Text style={styles.descriptionTextPrice}>Monedas de Oro</Text>
-            </View>
-            {/* Ejecutará la función desde cartSlice con dispatch */}
-            <Pressable style={styles.buy} onPress={onAddCart} >
-              <Text style={styles.buyText}>Comprar</Text>
-            </Pressable>
-          </View>
-        </View>
-      ) : (
+      {isLoading ? (
         <View>
+          <ActivityIndicator size="large" color="#0000ff" />
           <Text>Cargando... </Text>
         </View>
+      ) : (
+        <ScrollView style={{flex: 1}}>
+          <View style={styles.container}>
+            <Image
+              source={{ uri: product.images }}
+              style={styles.image}
+              resizeMode="cover"
+            />
+            <View style={styles.textContainer}>
+              <Text style={styles.descriptionTitle}>{product.title} </Text>
+              <Text style={styles.descriptionText}>{product.description} </Text>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Text style={styles.price}>{product.price} </Text>
+                <Text style={styles.descriptionTextPrice}>Monedas de Oro</Text>
+              </View>
+              <Counter
+                stock={product.stock}
+                onChangeQuantity={setSelectedQuantity}
+              />
+              {/* Ejecutará la función desde cartSlice con dispatch */}
+              <Pressable style={styles.buy} onPress={onAddCart}>
+                <Text style={styles.buyText}>Agregar al Carrito</Text>
+              </Pressable>
+            </View>
+          </View>
+        </ScrollView>
       )}
     </View>
   );

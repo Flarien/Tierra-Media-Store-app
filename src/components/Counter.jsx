@@ -1,39 +1,57 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors";
 import {
   increment,
   decrement,
-  incrementByAmount,
   reset,
 } from "../features/counter/counterSlice";
 
-const Counter = () => {
-  const [inputToAdd, setInputToAdd] = useState(0);
+const Counter = ({ stock, onChangeQuantity }) => {
+  //const [inputToAdd, setInputToAdd] = useState(0);
 
   const count = useSelector((state) => state.counterReducer.value);
+  const dispatch = useDispatch();
 
-  const confirmAdd = () => {
-    dispatch(incrementByAmount(inputToAdd));
-    setInputToAdd("");
+  // const confirmAdd = () => {
+  //   dispatch(incrementByAmount(inputToAdd));
+  //   setInputToAdd("");
+  // };
+
+  
+  const decrementCount = () => {
+    if (count > 1) {
+      dispatch(decrement());
+      onChangeQuantity(count - 1);
+    }
   };
 
-  const dispatch = useDispatch();
+  const incrementCount = () => {
+    if (count < stock) {
+      dispatch(increment());
+      onChangeQuantity(count + 1);
+    }
+  };
+
+  const resetCount = () => {
+    dispatch(reset());
+    onChangeQuantity(1);
+  };
+
 
   return (
     <View style={styles.container}>
       <View style={styles.rowContainer}>
-        {/* ///Falta lógica para que no vaya menos de 0 */}
-        <Pressable onPress={() => dispatch(decrement())}>
+        <Pressable onPress={decrementCount}>
           <Text style={styles.button}>-</Text>
         </Pressable>
         <Text style={styles.counterText}>{count}</Text>
-        <Pressable onPress={() => dispatch(increment())}>
+        <Pressable onPress={incrementCount}>
           <Text style={styles.button}>+</Text>
         </Pressable>
       </View>
-      <View style={styles.inputContainer}>
+      {/* <View style={styles.inputContainer}>
         <TextInput
           placeholder="Cantidad a aumentar"
           value={inputToAdd !== 0 ? inputToAdd.toString() : ""}
@@ -43,8 +61,8 @@ const Counter = () => {
         <Pressable onPress={confirmAdd}>
           <Text style={styles.buttonAdd}>Add</Text>
         </Pressable>
-      </View>
-      <Pressable onPress={() => dispatch(reset())}>
+      </View> */}
+      <Pressable onPress={resetCount}>
         <Text style={styles.buttonReset}>Reset</Text>
       </Pressable>
     </View>
