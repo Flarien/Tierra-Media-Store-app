@@ -13,10 +13,12 @@ export default Card
 
 const styles = StyleSheet.create({
   cardContainer: {
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.back_green,
+    width: "95%",
+    height: 300,
     shadowColor: "black",
     shadowOffset: {
       height: 3,
@@ -25,6 +27,6 @@ const styles = StyleSheet.create({
     elevation: 8,
     shadowOpacity: 1,
     shadowRadius: 1,
-    margin: 8
+    margin: 10
   },
 });

@@ -5,10 +5,12 @@ import {
   ActivityIndicator,
   FlatList,
   StyleSheet,
-  Text,
   View,
 } from "react-native";
 import CategoryItem from "./CategoryItem";
+import { colors } from "../global/colors";
+import StyledView from "../styledComponents/StyledView";
+import StyledText from "../styledComponents/StyledText";
 
 const Categories = ({ navigation }) => {
   //const categories = useSelector(state => state.shopReducer.value.categories)
@@ -25,17 +27,17 @@ const Categories = ({ navigation }) => {
 
   if (isLoading) {
     return (
-      <View>
-        <ActivityIndicator size="large" color="#0000ff" />
-      </View>
+      <StyledView center>
+        <ActivityIndicator size={100} color={colors.back_green} />
+      </StyledView>
     );
   }
 
   if (error) {
     return (
-      <View>
-        <Text>Error al cargar</Text>
-      </View>
+      <StyledView center>
+        <StyledText red>Error al cargar</StyledText>
+      </StyledView>
     );
   }
 

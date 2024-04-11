@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
+import { colors } from "../global/colors";
 
 const InputForm = ({ label, error, onChange, isSecure }) => {
 
@@ -44,8 +45,8 @@ const styles = StyleSheet.create({
     width: "90%",
     borderWidth: 0,
     borderBottomWidth: 3,
-    borderBottomColor: "green",
+    borderBottomColor: colors.secondary,
     padding: 2,
-    fontSize: 14,
+    marginBottom: 10
   },
 });

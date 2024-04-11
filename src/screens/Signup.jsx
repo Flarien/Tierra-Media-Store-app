@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSignUpMutation } from "../services/authService";
 import { useDispatch } from "react-redux";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import { setUser } from "../features/auth/authSlice";
 import { signupSchema } from "../validations/signupSchema";
 import InputForm from "../components/InputForm";
-import SubmitButton from "../components/SubmitButton";
+import AddButton from "../components/AddButton";
+import StyledView from "../styledComponents/StyledView";
+import StyledText from "../styledComponents/StyledText";
 
 const Signup = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -55,10 +57,10 @@ const Signup = ({ navigation }) => {
   }, [result]);
 
   return (
-    <View>
-      <Text style={{ margin: 20, fontWeight: "bold" }}>
-        Registro de nuevo usuario:
-      </Text>
+    <StyledView center>
+      <StyledText green title>
+        Crear Cuenta:
+      </StyledText>
       <InputForm label={"Email"} error={errorMail} onChange={setEmail} />
       <InputForm
         label={"Contraseña"}
@@ -72,11 +74,11 @@ const Signup = ({ navigation }) => {
         onChange={setConfirmPassword}
         isSecure={true}
       />
-      <SubmitButton title={"Registrarme"} onPress={onSubmit} />
+      <AddButton title={"Registrarme"} onPress={onSubmit} />
       <Pressable onPress={() => navigation.navigate("Login")}>
-        <Text style={styles.descriptionTitle}>Ya tengo cuenta: Ir a Login</Text>
+        <StyledText red>Ya tengo cuenta: Ir a Login</StyledText>
       </Pressable>
-    </View>
+    </StyledView>
   );
 };
 

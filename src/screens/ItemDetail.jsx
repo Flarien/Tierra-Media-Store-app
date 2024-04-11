@@ -1,45 +1,51 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { ActivityIndicator, Image, Pressable, ScrollView, StyleSheet, Text, ToastAndroid, View } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { addItem } from "../features/shop/cartSlice";
 import { colors } from "../global/colors";
-import allProducts from '../data/products.json';
+import allProducts from "../data/products.json";
 import Counter from "../components/Counter";
 import Toast from "react-native-toast-message";
+import StyledView from "../styledComponents/StyledView";
 
 const ItemDetail = ({ route }) => {
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedQuantity, setSelectedQuantity] = useState(1);
 
-  const {id} = route.params
+  const { id } = route.params;
 
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch();
+
   const showToast = () => {
     Toast.show({
       type: "success",
       text1: "¡Agregado al carrito!",
       visibilityTime: 1000,
     });
-  }
+  };
 
   const onAddCart = () => {
     dispatch(addItem({ ...product, quantity: selectedQuantity }));
 
-      // Toast.show({
-      //   type: "success",
-      //   text1: "¡Agregado al carrito!",
-      //   visibilityTime: 1000,
-      // });
-      showToast()
-      
-  }
+    // Toast.show({
+    //   type: "success",
+    //   text1: "¡Agregado al carrito!",
+    //   visibilityTime: 1000,
+    // });
+    showToast();
+  };
 
   useEffect(() => {
-    const productFinded = allProducts.find(
-      (product) => product.id === id
-    );
+    const productFinded = allProducts.find((product) => product.id === id);
     setProduct(productFinded);
 
     const timer = setTimeout(() => {
@@ -49,15 +55,14 @@ const ItemDetail = ({ route }) => {
   }, [id]);
 
   return (
-    <View style={styles.main}>
+    <StyledView>
       {isLoading ? (
-        <View>
-          <ActivityIndicator size="large" color="#0000ff" />
-          <Text>Cargando... </Text>
-        </View>
+        <StyledView center>
+          <ActivityIndicator size={100} color={colors.back_green} />
+        </StyledView>
       ) : (
-        <ScrollView style={{flex: 1}}>
-          <View style={styles.container}>
+        <ScrollView style={{ flex: 1 }}>
+          <StyledView>
             <Image
               source={{ uri: product.images }}
               style={styles.image}
@@ -79,26 +84,17 @@ const ItemDetail = ({ route }) => {
                 <Text style={styles.buyText}>Agregar al Carrito</Text>
               </Pressable>
             </View>
-          </View>
+          </StyledView>
         </ScrollView>
       )}
-    </View>
+    </StyledView>
   );
 };
 
 export default ItemDetail;
 
 const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    width: "100%",
-  },
-  container: {
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    height: "100%",
-  },
+
   image: {
     width: "100%",
     height: 400,
