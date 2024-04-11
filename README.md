@@ -1,10 +1,10 @@
 # Proyecto para Desarrollo de Aplicaciones
 
-Bienvenido al repositorio de Briglia App, una aplicación desarrollada con React Native, como proyecto para CODERHOUSE, Comisión 61300.
+Bienvenido al repositorio de Tierra Media Store App, una aplicación desarrollada con React Native, como proyecto para CODERHOUSE, Comisión 61300.
 
 
 ## Descripción
-Briglia App es una aplicación desarrollada con React Native que funciona como una tienda online inspirada en el universo creado por **J.R.R. Tolkien**. Permite a los usuarios explorar y adquirir productos relacionados con sus obras, como **"El Señor de los Anillos"**, **"El Hobbit"** y **"El Silmarillion"**. 
+Tierra Media Store App es una aplicación desarrollada con React Native que funciona como una tienda online inspirada en el universo creado por **J.R.R. Tolkien**. Permite a los usuarios explorar y adquirir productos relacionados con sus obras, como **"El Señor de los Anillos"**, **"El Hobbit"** y **"El Silmarillion"**. 
 
 
 ## Tecnologías Utilizadas
@@ -53,10 +53,10 @@ Para ejecutar este proyecto en tu entorno local, sigue estos pasos:
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/briglia-app.git
+   git clone https://github.com/tu-usuario/Tierra-Media-Store-app.git
 2. Navega al directorio del proyecto:
    ```bash
-   cd briglia-app
+   cd Tierra-Media-Store-app
 3. Instala las dependencias:
    ```bash
    npm install
@@ -78,4 +78,6 @@ Esta aplicación, llamada "Tierra Media Store", está inspirada en el rico unive
 
 ## Contacto
 Si tienes alguna pregunta, comentario o problema con la aplicación "Tierra Media Store", no dudes en ponerte en contacto conmigo. Puedes enviarme un correo electrónico a [fbrig87@gmail.com](mailto:fbrig87@gmail.com).
+
+Flavia S. Briglia
 
