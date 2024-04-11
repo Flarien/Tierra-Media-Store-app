@@ -7,7 +7,6 @@ import store from "./src/store";
 import MainNavigator from "./src/navigation/MainNavigator.jsx";
 import {init} from "./src/db"
 
-//ejecuto la función que inicia la db
 init()
   .then(() => console.log("DB Inicializada"))
   .catch(err => {

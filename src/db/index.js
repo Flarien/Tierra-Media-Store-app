@@ -1,10 +1,8 @@
 import * as SQLite from "expo-sqlite";
 
-//Aquí se guardarán las sesiones de usuario
 const db = SQLite.openDatabase("sessions.db");
 
 export const init = () => {
-  //Crea una promesa (parametros), accede a la db y crea una nueva transacción (tx) y ejecuta el comando/sentencia SQL,que crea una nueva tabla (sessions, por primera vez), con los parámetros localId, email y token
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
@@ -38,7 +36,7 @@ export const fetchSession = () => {
   const promise = new Promise((resolve, reject) => {
     db.transaction((tx) => {
       tx.executeSql(
-        "SELECT * FROM sessions", //  WHERE localId = ?
+        "SELECT * FROM sessions",
         [],
         (_, result) => resolve(result),
         (_, error) => reject(error)

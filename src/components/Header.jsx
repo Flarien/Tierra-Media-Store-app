@@ -1,12 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { colors } from "../global/colors";
 import Constants from "expo-constants";
 import StyledText from "../styledComponents/StyledText";
 
 
 const Header = ({ title }) => {
-  //useSelector --> REDUX
-
   return (
     <View style={styles.container}>
       <StyledText textCategory>{title}</StyledText>
@@ -19,7 +17,7 @@ export default Header;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.secondary,
-    paddingTop: Platform.OS === "android" ? Constants.statusBarHeight : 0, //Si es iOS, el paddig es 0. Si es android, usa el Constants
+    paddingTop: Platform.OS === "android" ? Constants.statusBarHeight : 0, 
   },
 
   titleSection: {

@@ -5,4 +5,3 @@ export const colors = {
   back_beige: "#E9E5D6",
   error: "#8D0801",
 };
-//Agregar colores que contrasten ^^

@@ -1,4 +1,3 @@
-//import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useGetCategoriesQuery } from "../services/shopService";
 import {
@@ -7,8 +6,8 @@ import {
   StyleSheet,
   View,
 } from "react-native";
-import CategoryItem from "./CategoryItem";
 import { colors } from "../global/colors";
+import CategoryItem from "./CategoryItem";
 import StyledView from "../styledComponents/StyledView";
 import StyledText from "../styledComponents/StyledText";
 

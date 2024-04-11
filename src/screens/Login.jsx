@@ -5,9 +5,9 @@ import { ActivityIndicator, Pressable } from "react-native";
 import { setUser } from "../features/auth/authSlice";
 import { loginSchema } from "../validations/loginSchema";
 import { colors } from "../global/colors";
+import { insertSession } from "../db";
 import InputForm from "../components/InputForm";
 import AddButton from "../components/AddButton";
-import { insertSession } from "../db";
 import StyledView from "../styledComponents/StyledView";
 import StyledText from "../styledComponents/StyledText";
 

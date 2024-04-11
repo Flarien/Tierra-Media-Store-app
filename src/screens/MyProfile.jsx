@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import { Image, Pressable, StyleSheet, View } from "react-native";
 import { colors } from "../global/colors";
-import AddButton from "../components/AddButton";
 import { logout } from "../features/auth/authSlice";
 import { useDispatch } from "react-redux";
 import { deleteSession } from "../db";
 import { MaterialIcons } from "@expo/vector-icons";
+import AddButton from "../components/AddButton";
 import StyledText from "../styledComponents/StyledText"
 
 const MyProfile = ({ navigation }) => {
@@ -14,8 +14,6 @@ const MyProfile = ({ navigation }) => {
     (state) => state.authReducer.value
   );
   const { localId, user } = useSelector((state) => state.authReducer.value);
-
-
   const dispatch = useDispatch();
 
   const onLogout = async () => {

@@ -2,7 +2,7 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { removeItem } from "../features/shop/cartSlice"; 
 import { colors } from "../global/colors";
-import { Ionicons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import Toast from "react-native-toast-message";
 import Card from "./Card";
 
@@ -31,7 +31,7 @@ const CartItem = ({ item }) => {
             handleRemoveItem();
           }}
         >
-          <Ionicons name="trash-bin-outline" size={24} color="black" />
+          <Entypo name="trash" size={24} color={colors.error} />
         </Pressable>
       </View>
     </Card>

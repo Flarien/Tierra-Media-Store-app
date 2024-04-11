@@ -24,7 +24,6 @@ const MainNavigator = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    //Esta funcion se autoejecuta
     (async () => {
       try {
         const session = await fetchSession();

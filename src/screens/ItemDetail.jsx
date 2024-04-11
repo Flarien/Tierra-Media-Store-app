@@ -36,11 +36,6 @@ const ItemDetail = ({ route }) => {
   const onAddCart = () => {
     dispatch(addItem({ ...product, quantity: selectedQuantity }));
 
-    // Toast.show({
-    //   type: "success",
-    //   text1: "¡Agregado al carrito!",
-    //   visibilityTime: 1000,
-    // });
     showToast();
   };
 
@@ -79,7 +74,6 @@ const ItemDetail = ({ route }) => {
                 stock={product.stock}
                 onChangeQuantity={setSelectedQuantity}
               />
-              {/* Ejecutará la función desde cartSlice con dispatch */}
               <Pressable style={styles.buy} onPress={onAddCart}>
                 <Text style={styles.buyText}>Agregar al Carrito</Text>
               </Pressable>
