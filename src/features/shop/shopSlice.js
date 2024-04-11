@@ -9,8 +9,8 @@ export const shopSlice = createSlice({
       products: allProducts,
       categories: allCategories,
       categorySelected: "",
-      productsFilteredByCategory: [],
       productIdSelected: null,
+      productsFilteredByCategory: [],
     },
   },
   reducers: {

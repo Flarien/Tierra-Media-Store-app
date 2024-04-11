@@ -21,22 +21,26 @@ export const shopApi = createApi({
         method: "POST",
         body: order,
       }),
+      onError: (error) => {
+        console.error("Error al enviar la orden:", error);
+        // Aquí puedes agregar la lógica para mostrar un mensaje de error al usuario
+      },
     }),
-    getProfileImage: builder.query({
-      query: (localId) => `profileImages/${localId}.json`,
+    getOrders: builder.query({
+      query: () => "orders.json",
     }),
     postProfileImage: builder.mutation({
-      query: ({ image, localId }) => ({
+      query: ({ localId, image }) => ({
         url: `profileImages/${localId}.json`,
         method: "PUT",
         body: { image: image },
       }),
     }),
-    getUserLocation: builder.query({
-      query: (localId) => `locations/${localId}.json`,
+    getProfileImage: builder.query({
+      query: (localId) => `profileImages/${localId}.json`,
     }),
     postUserLocation: builder.mutation({
-      query: ({ location, localId }) => ({
+      query: ({ localId, location }) => ({
         url: `locations/${localId}.json`,
         method: "PUT",
         body: {
@@ -46,6 +50,9 @@ export const shopApi = createApi({
         },
       }),
     }),
+    getUserLocation: builder.query({
+      query: (localId) => `locations/${localId}.json`,
+    }),
   }),
 });
 
@@ -53,8 +60,9 @@ export const {
   useGetProductsByCategoryQuery,
   useGetCategoriesQuery,
   usePostOrderMutation,
-  useGetProfileImageQuery,
+  useGetOrdersQuery,
   usePostProfileImageMutation,
+  useGetProfileImageQuery,
+  usePostUserLocationMutation,
   useGetUserLocationQuery,
-  usePostUserLocationMutation
 } = shopApi;

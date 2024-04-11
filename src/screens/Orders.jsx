@@ -1,10 +1,8 @@
-import { FlatList, View } from 'react-native'
-import orders from "../data/orders.json"
-import OrderItems from '../components/OrderItems';
-
+import { FlatList, View } from "react-native";
+import orders from "../data/orders.json";
+import OrderItems from "../components/OrderItems";
 
 const Orders = () => {
-
   return (
     <View>
       <FlatList
@@ -12,9 +10,8 @@ const Orders = () => {
         renderItem={({ item }) => <OrderItems item={item} />}
         keyExtractor={(order) => order.id}
       />
-
     </View>
   );
-}
+};
 
-export default Orders
+export default Orders;

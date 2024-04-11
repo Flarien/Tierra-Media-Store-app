@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSignUpMutation } from "../services/authService";
 import { useDispatch } from "react-redux";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import { setUser } from "../features/auth/authSlice";
 import { signupSchema } from "../validations/signupSchema";
 import InputForm from "../components/InputForm";
-import SubmitButton from "../components/SubmitButton";
+import AddButton from "../components/AddButton";
+import StyledView from "../styledComponents/StyledView";
+import StyledText from "../styledComponents/StyledText";
 
 const Signup = ({ navigation }) => {
   const [email, setEmail] = useState("");
@@ -19,15 +21,17 @@ const Signup = ({ navigation }) => {
   const dispatch = useDispatch();
 
   const onSubmit = () => {
-    //Revisar lógica
+    //Revisar lógica // Agregar mensaje tipo toast de registro exitoso
     try {
       setErrorMail("");
       setErrorPassword("");
       setErrorConfirmPassword("");
 
       signupSchema.validateSync({ password, confirmPassword, email });
+
       triggerSignup({ email, password });
       console.log("Registro exitoso");
+      
     } catch (err) {
       console.log("path", err.path);
       switch (err.path) {
@@ -48,15 +52,15 @@ const Signup = ({ navigation }) => {
 
   useEffect(() => {
     if (result.data) {
-      dispatch(setUser(result));
+      dispatch(setUser(result.data));
     }
   }, [result]);
 
   return (
-    <View>
-      <Text style={{ margin: 20, fontWeight: "bold" }}>
-        Registro de nuevo usuario:
-      </Text>
+    <StyledView center>
+      <StyledText green title>
+        Crear Cuenta:
+      </StyledText>
       <InputForm label={"Email"} error={errorMail} onChange={setEmail} />
       <InputForm
         label={"Contraseña"}
@@ -70,11 +74,11 @@ const Signup = ({ navigation }) => {
         onChange={setConfirmPassword}
         isSecure={true}
       />
-      <SubmitButton title={"Registrarse"} onPress={onSubmit} />
+      <AddButton title={"Registrarme"} onPress={onSubmit} />
       <Pressable onPress={() => navigation.navigate("Login")}>
-        <Text style={styles.descriptionTitle}>Ir a Logearme</Text>
+        <StyledText red>Ya tengo cuenta: Ir a Login</StyledText>
       </Pressable>
-    </View>
+    </StyledView>
   );
 };
 

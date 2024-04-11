@@ -1,14 +1,38 @@
-import { Image, StyleSheet, Text, View } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../features/shop/cartSlice"; 
+import { colors } from "../global/colors";
+import { Ionicons } from "@expo/vector-icons";
+import Toast from "react-native-toast-message";
 import Card from "./Card";
 
 const CartItem = ({ item }) => {
+   const dispatch = useDispatch();
+
+   const handleRemoveItem = () => {
+     dispatch(removeItem({ id: item.id }));
+
+     Toast.show({
+       type: "info",
+       text1: "¡Producto eliminado!",
+       visibilityTime: 1000,
+     });
+   };
+
   return (
     <Card>
       <View style={styles.cartContainer}>
         <Image style={styles.image} source={{ uri: item.images }} />
-        <Text style={styles.descriptionTitle}>{item.title} </Text>
-        <Text style={styles.price}>{item.price} </Text>
+        <Text style={styles.descriptionTitle}>Nombre: {item.title} </Text>
+        <Text style={styles.price}>Precio: {item.price} </Text>
+        <Text style={styles.price}>Cantidad: {item.quantity} </Text>
+        <Pressable
+          onPress={() => {
+            handleRemoveItem();
+          }}
+        >
+          <Ionicons name="trash-bin-outline" size={24} color="black" />
+        </Pressable>
       </View>
     </Card>
   );
@@ -20,7 +44,7 @@ const styles = StyleSheet.create({
   cartContainer: {
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Colors.back_green,
+    backgroundColor: colors.back_green,
     shadowColor: "black",
     shadowOffset: {
       height: 3,

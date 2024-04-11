@@ -1,71 +1,100 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { addItem } from "../features/shop/cartSlice";
 import { colors } from "../global/colors";
 import allProducts from "../data/products.json";
+import Counter from "../components/Counter";
+import Toast from "react-native-toast-message";
+import StyledView from "../styledComponents/StyledView";
 
-const ItemDetail = ({ navigation, route }) => {
+const ItemDetail = ({ route }) => {
   const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
 
-  const {id} = route.params
+  const { id } = route.params;
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  const showToast = () => {
+    Toast.show({
+      type: "success",
+      text1: "¡Agregado al carrito!",
+      visibilityTime: 1000,
+    });
+  };
 
   const onAddCart = () => {
-    dispatch(addItem({...product, quantity: 1}))
-  }
+    dispatch(addItem({ ...product, quantity: selectedQuantity }));
+
+    // Toast.show({
+    //   type: "success",
+    //   text1: "¡Agregado al carrito!",
+    //   visibilityTime: 1000,
+    // });
+    showToast();
+  };
 
   useEffect(() => {
-    const productFinded = allProducts.find(
-      (product) => product.id === id
-    );
+    const productFinded = allProducts.find((product) => product.id === id);
     setProduct(productFinded);
+
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
   }, [id]);
 
   return (
-    <View style={styles.main}>
-      {product ? (
-        <View style={styles.container}>
-          <Image
-            source={{ uri: product.images }}
-            style={styles.image}
-            resizeMode="cover"
-          />
-          <View style={styles.textContainer}>
-            <Text style={styles.descriptionTitle}>{product.title} </Text>
-            <Text style={styles.descriptionText}>{product.description} </Text>
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <Text style={styles.price}>{product.price} </Text>
-              <Text style={styles.descriptionTextPrice}>Monedas de Oro</Text>
-            </View>
-            <Pressable style={styles.buy} onPress={onAddCart} >
-              <Text style={styles.buyText}>Comprar</Text>
-            </Pressable>
-          </View>
-        </View>
+    <StyledView>
+      {isLoading ? (
+        <StyledView center>
+          <ActivityIndicator size={100} color={colors.back_green} />
+        </StyledView>
       ) : (
-        <View>
-          <Text>Cargando... </Text>
-        </View>
+        <ScrollView style={{ flex: 1 }}>
+          <StyledView>
+            <Image
+              source={{ uri: product.images }}
+              style={styles.image}
+              resizeMode="cover"
+            />
+            <View style={styles.textContainer}>
+              <Text style={styles.descriptionTitle}>{product.title} </Text>
+              <Text style={styles.descriptionText}>{product.description} </Text>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Text style={styles.price}>{product.price} </Text>
+                <Text style={styles.descriptionTextPrice}>Monedas de Oro</Text>
+              </View>
+              <Counter
+                stock={product.stock}
+                onChangeQuantity={setSelectedQuantity}
+              />
+              {/* Ejecutará la función desde cartSlice con dispatch */}
+              <Pressable style={styles.buy} onPress={onAddCart}>
+                <Text style={styles.buyText}>Agregar al Carrito</Text>
+              </Pressable>
+            </View>
+          </StyledView>
+        </ScrollView>
       )}
-    </View>
+    </StyledView>
   );
 };
 
 export default ItemDetail;
 
 const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    width: "100%",
-  },
-  container: {
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    height: "100%",
-  },
+
   image: {
     width: "100%",
     height: 400,

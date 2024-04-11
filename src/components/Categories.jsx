@@ -1,15 +1,47 @@
 //import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { useGetCategoriesQuery } from "../services/shopService";
-import { FlatList, StyleSheet, View } from "react-native";
-import Counter from "../components/Counter";
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  View,
+} from "react-native";
 import CategoryItem from "./CategoryItem";
+import { colors } from "../global/colors";
+import StyledView from "../styledComponents/StyledView";
+import StyledText from "../styledComponents/StyledText";
 
 const Categories = ({ navigation }) => {
-  const { data, isLoading, error } = useGetCategoriesQuery();
+  const [isLoading, setIsLoading] = useState(true);
+  const { data, error } = useGetCategoriesQuery();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <StyledView center>
+        <ActivityIndicator size={100} color={colors.back_green} />
+      </StyledView>
+    );
+  }
+
+  if (error) {
+    return (
+      <StyledView center>
+        <StyledText red>Error al cargar</StyledText>
+      </StyledView>
+    );
+  }
 
   return (
     <View style={{ flex: 1 }}>
-      {/* <Counter /> */}
       <FlatList
         data={data}
         renderItem={({ item }) => (

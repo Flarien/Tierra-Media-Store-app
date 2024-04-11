@@ -1,16 +1,20 @@
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
-import { colors } from '../global/colors'
+import { StyleSheet, Text, View } from "react-native";
+import { colors } from "../global/colors";
 import Constants from "expo-constants";
+import StyledText from "../styledComponents/StyledText";
+
 
 const Header = ({ title }) => {
+  //useSelector --> REDUX
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.titleSection}>{title}</Text>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <StyledText textCategory>{title}</StyledText>
+    </View>
   );
 };
 
-export default Header
+export default Header;
 
 const styles = StyleSheet.create({
   container: {
@@ -26,4 +30,10 @@ const styles = StyleSheet.create({
     padding: 10,
     fontFamily: "Cinzel",
   },
-}); 
+
+  logoutIcon: {
+    right: 15,
+    marginTop: 55,
+    position: "absolute",
+  },
+});

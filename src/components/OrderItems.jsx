@@ -1,14 +1,13 @@
-import { Image, StyleSheet, Text, useWindowDimensions } from 'react-native'
-import Card from './Card';
+import { Image, StyleSheet, Text, useWindowDimensions } from "react-native";
+import Card from "./Card";
 
 const OrderItems = ({ item }) => {
-  
   const { width } = useWindowDimensions();
 
-    const total = item.items.reduce(
-      (acc, currentItem) => (acc + currentItem.quantity * currentItem.price),
-      0
-    );
+  const total = item.items.reduce(
+    (acc, currentItem) => acc + currentItem.quantity * currentItem.price,
+    0
+  );
 
   return (
     <Card>
@@ -23,7 +22,7 @@ const OrderItems = ({ item }) => {
   );
 };
 
-export default OrderItems
+export default OrderItems;
 
 const styles = StyleSheet.create({
   text: {

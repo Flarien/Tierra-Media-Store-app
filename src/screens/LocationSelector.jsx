@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
-import { StyleSheet, Text, View } from "react-native";
-import { colors } from "../global/colors";
-import MapPreview from "../components/MapPreview";
 import { useDispatch, useSelector } from "react-redux";
-import AddButton from "../components/AddButton";
+import { StyleSheet, Text, View } from "react-native";
 import { setUserLocation } from "../features/auth/authSlice";
 import { usePostUserLocationMutation } from "../services/shopService";
+import { colors } from "../global/colors";
+import { googleAPI } from "../firebase/googleAPI";
+import MapPreview from "../components/MapPreview";
+import AddButton from "../components/AddButton";
 
-const LocationSelector = ({ navigation }) => {
+const LocationSelector = () => {
   const [location, setLocation] = useState({ latitude: "", longitude: "" });
   const [error, setError] = useState(null);
   const [address, setAddress] = useState(null);
@@ -16,7 +17,7 @@ const LocationSelector = ({ navigation }) => {
   const [triggerPostAddress, result] = usePostUserLocationMutation();
   console.log(result);
 
-  dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
@@ -25,8 +26,7 @@ const LocationSelector = ({ navigation }) => {
         setError("El permiso de acceso a ubicación fue denegado");
         return;
       }
-
-      let location = await Location.getCurrentPositionAsync({});
+      let location = await Location.getCurrentPositionAsync();
       setLocation({
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
@@ -41,16 +41,15 @@ const LocationSelector = ({ navigation }) => {
           const url_reverse_geocode = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.latitude},${location.longitude}&key=${googleAPI.mapStatic}`;
           const response = await fetch(url_reverse_geocode);
           const data = await response.json();
-          setAddress(data.results[0].formatted_adddress);
+          setAddress(data.results[0].formatted_address);
         }
-      } catch (error) {
+      } catch (err) {
         setError(setError.message);
       }
     })();
   }, [location]);
 
   const onConfirmAddress = () => {
-    console.log(localId, location, address);
     const locationFormatted = {
       latitude: location.latitude,
       longitude: location.longitude,
@@ -112,9 +111,10 @@ const styles = StyleSheet.create({
   },
 
   noLocationContainer: {
-    width: 200,
-    height: 200,
-    borderWidth: 2,
+    width: 330,
+    height: 330,
+    borderRadius: 200,
+    borderWidth: 4,
     borderColor: colors.back_green,
     padding: 10,
     justifyContent: "center",
