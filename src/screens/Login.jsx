@@ -12,7 +12,7 @@ import StyledView from "../styledComponents/StyledView";
 import StyledText from "../styledComponents/StyledText";
 
 const Login = ({ navigation }) => {
-  //Revisar lógica de estados y métodos
+
   const [email, setEmail] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [password, setPassword] = useState("");
@@ -76,7 +76,6 @@ const Login = ({ navigation }) => {
         isSecure={true}
       />
       {result.isLoading ? (
-        //Probar otra lógica, quizás dentro del onSubmit, aplicando opacity al boton mientras carga el loader?
         <StyledView center>
           <ActivityIndicator size={100} color={colors.back_green} />
         </StyledView>

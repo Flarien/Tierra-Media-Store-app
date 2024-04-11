@@ -13,7 +13,6 @@ const ItemListCategories = ({ navigation }) => {
   const [keyword, setKeyword] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  //const productsFilteredByCategory = useSelector((state) => state.shopReducer.value.productsFilteredByCategory);
   const category = useSelector(
     (state) => state.shopReducer.value.categorySelected
   );
@@ -29,6 +28,7 @@ const ItemListCategories = ({ navigation }) => {
       const productsRaw = Object.values(productsFilteredByCategory); // productsRaw devuelve un array con los valores de las propiedades de un objeto (los productos contenidos en productsFilteredByCategory)
       const productsFiltered = productsRaw.filter(
         (product) => product.title.includes(keyword) // Filtra los productos por el keyword ingresado
+
       );
       setProducts(productsFiltered);
     }
@@ -62,7 +62,7 @@ if (error) {
         data={products}
         renderItem={({ item }) => (
           <ProductItem product={item} navigation={navigation} />
-        )} // Renderiza este componente por cada elemento en el array - Desestructura "item"
+        )} 
         keyExtractor={(item) => item.id}
       />
     </StyledView>

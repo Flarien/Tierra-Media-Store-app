@@ -49,7 +49,6 @@ export const cartSlice = createSlice({
     },
 
     removeItem: (state, action) => {
-      //Primero filtra los elementos que no coincidan con el id, eliminándolos/modificando el array original. Luego calcula el nuevo total, sumando los precios de los elementos ya actualizados y devuelve un array actualizado.
 
       const updatedItems = state.value.items.filter(
         (item) => item.id !== action.payload.id

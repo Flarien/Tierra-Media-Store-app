@@ -1,4 +1,4 @@
-//import { useState } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { colors } from "../global/colors";
@@ -9,16 +9,9 @@ import {
 } from "../features/counter/counterSlice";
 
 const Counter = ({ stock, onChangeQuantity }) => {
-  //const [inputToAdd, setInputToAdd] = useState(0);
 
   const count = useSelector((state) => state.counterReducer.value);
   const dispatch = useDispatch();
-
-  // const confirmAdd = () => {
-  //   dispatch(incrementByAmount(inputToAdd));
-  //   setInputToAdd("");
-  // };
-
   
   const decrementCount = () => {
     if (count > 1) {
@@ -51,17 +44,6 @@ const Counter = ({ stock, onChangeQuantity }) => {
           <Text style={styles.button}>+</Text>
         </Pressable>
       </View>
-      {/* <View style={styles.inputContainer}>
-        <TextInput
-          placeholder="Cantidad a aumentar"
-          value={inputToAdd !== 0 ? inputToAdd.toString() : ""}
-          onChangeText={(text) => setInputToAdd(Number(text))}
-          style={styles.input}
-        />
-        <Pressable onPress={confirmAdd}>
-          <Text style={styles.buttonAdd}>Add</Text>
-        </Pressable>
-      </View> */}
       <Pressable onPress={resetCount}>
         <Text style={styles.buttonReset}>Reset</Text>
       </Pressable>

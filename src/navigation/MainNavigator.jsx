@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import {
@@ -66,7 +65,6 @@ const MainNavigator = () => {
 
   return (
     <NavigationContainer>
-      {/* <TabNavigator /> */}
       {user ? <TabNavigator /> : <AuthStack />}
       <Toast />
     </NavigationContainer>

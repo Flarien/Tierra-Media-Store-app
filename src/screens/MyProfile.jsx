@@ -9,10 +9,12 @@ import { MaterialIcons } from "@expo/vector-icons";
 import StyledText from "../styledComponents/StyledText"
 
 const MyProfile = ({ navigation }) => {
+
   const { profileImage, imageCamera } = useSelector(
     (state) => state.authReducer.value
   );
   const { localId, user } = useSelector((state) => state.authReducer.value);
+
 
   const dispatch = useDispatch();
 

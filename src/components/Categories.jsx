@@ -13,7 +13,6 @@ import StyledView from "../styledComponents/StyledView";
 import StyledText from "../styledComponents/StyledText";
 
 const Categories = ({ navigation }) => {
-  //const categories = useSelector(state => state.shopReducer.value.categories)
   const [isLoading, setIsLoading] = useState(true);
   const { data, error } = useGetCategoriesQuery();
 

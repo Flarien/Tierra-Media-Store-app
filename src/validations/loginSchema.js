@@ -1,7 +1,6 @@
 import { object, string } from "yup";
 
 export const loginSchema = object().shape({
-  //Revisar. Agregar mensaje de, ej, "Usuario inexistente"
   email: string()
     .required("Email es requerido")
     .email("Ingrese un email válido"),
